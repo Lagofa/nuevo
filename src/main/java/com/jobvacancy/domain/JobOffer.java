@@ -31,6 +31,9 @@ public class JobOffer implements Serializable {
     
     @Column(name = "description")
     private String description;
+    
+    @Column(name = "experiencia")
+    private Long experiencia;
 
     @ManyToOne
     private User owner;
@@ -75,6 +78,13 @@ public class JobOffer implements Serializable {
         this.owner = user;
     }
 
+    public Long getExperiencia() {
+        return experiencia;
+    }
+
+    public void setExperiencia(Long experiencia) {
+        this.experiencia = experiencia;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -103,6 +113,7 @@ public class JobOffer implements Serializable {
                 ", title='" + title + "'" +
                 ", location='" + location + "'" +
                 ", description='" + description + "'" +
+                ", experiencia='" + experiencia + "'" +
                 '}';
     }
 }

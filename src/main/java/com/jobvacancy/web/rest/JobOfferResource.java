@@ -57,6 +57,10 @@ public class JobOfferResource {
         String currentLogin = SecurityUtils.getCurrentLogin();
         Optional<User> currentUser = userRepository.findOneByLogin(currentLogin);
         jobOffer.setOwner(currentUser.get());
+        if(jobOffer.getExperiencia()==null){
+        	jobOffer.setExperiencia(new Long(0));;
+        }
+        	
         JobOffer result = jobOfferRepository.save(jobOffer);
         return ResponseEntity.created(new URI("/api/jobOffers/" + result.getId()))
                 .headers(HeaderUtil.createEntityCreationAlert("jobOffer", result.getId().toString()))

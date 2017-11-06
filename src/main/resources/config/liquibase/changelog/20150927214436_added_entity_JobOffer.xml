@@ -28,6 +28,8 @@
             <column name="location" type="varchar(255)"/>
             <column name="description" type="varchar(255)"/>
             <column name="owner_id" type="bigint"/>
+            <column name="experiencia" type="bigint"/>
+
         </createTable>
         
         <addForeignKeyConstraint baseColumnNames="owner_id"

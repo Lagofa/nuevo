@@ -51,7 +51,7 @@ angular.module('jobvacancyApp')
                         size: 'lg',
                         resolve: {
                             entity: function () {
-                                return {title: null, location: null, description: null, id: null};
+                                return {title: null, location: null, description: null, id: null, experiencia:null};
                             }
                         }
                     }).result.then(function(result) {

@@ -32,7 +32,7 @@ angular.module('jobvacancyApp')
                         size: 'lg',
                         resolve: {
                             entity: function () {
-                                return {fullname: null, email: null, offerId: $stateParams.id};
+                                return {fullname: null, email: null, experiencia: null, offerId: $stateParams.id};
                             }
                         }
                     }).result.then(function(result) {
