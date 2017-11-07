@@ -37,11 +37,18 @@
             <input type="text" class="form-control" name="description" id="field_description"
                     ng-model="jobOffer.description"
                     >
+
         </div>
 	<div class="form-group">
-            <label for="field_Experiencia">Experiencia requerida(numero entero mayor o igual a 0)</label>
+            <label for="field_Experiencia">Experiencia requerida</label>
             <input type="number" class="form-control" min ="0" name="experiencia" id="field_experiencia"
                     ng-model="jobOffer.experiencia">
+	<div ng-show="editForm.experiencia.$invalid">
+		<p class="help-block"
+		ng-show="editForm.experiencia.$invalid">
+			Debe ingresar un numero entero mayor o igual a 0
+		</p>
+	</div>
         </div>
 
     </div>
