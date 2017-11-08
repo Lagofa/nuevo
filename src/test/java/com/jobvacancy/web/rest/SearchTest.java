@@ -55,7 +55,7 @@ public class SearchTest {
 	 jobOffer.setDescription("Programador java para testeo de aplicaciones");
 	 jobOffer2.setTitle("Desarrollo movil");
 	 jobOffer2.setDescription("Desarrollador juniors para aplicaciones movil");
-	 
+	 jobOfferRepository.deleteAll();
 	 jobOfferRepository.saveAndFlush(jobOffer);
 	 jobOfferRepository.saveAndFlush(jobOffer2);
 	 
