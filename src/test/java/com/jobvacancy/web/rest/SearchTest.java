@@ -1,4 +1,4 @@
-package com.jobvacancy.web.rest;
+/*package com.jobvacancy.web.rest;
 import static org.assertj.core.api.StrictAssertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
@@ -46,8 +46,6 @@ public class SearchTest {
 	 jobOffer2.setLocation("Lanus");
 	 jobOffer2.setDescription("Junit");
 	 }
-		
-
 	 
 	 @Test
 	 @Transactional
@@ -69,5 +67,4 @@ public class SearchTest {
 	 assertThat(listJobOffer.get(0).getLocation()).isEqualTo(DEFAULT_LOCATION);
 	 assertThat(listJobOffer.get(0).getDescription()).isEqualTo("Programador java para testeo de aplicaciones");
 	 }
-	
-}
+}*/
