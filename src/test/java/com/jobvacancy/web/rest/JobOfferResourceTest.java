@@ -210,7 +210,6 @@ public class JobOfferResourceTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON))
             .andExpect(jsonPath("$.id").value(jobOffer.getId().intValue()))
- //           .andExpect(jsonPath("$.[*].experiencia").value(hasItem(jobOffer.getExperiencia().intValue())))
             .andExpect(jsonPath("$.title").value(DEFAULT_TITLE.toString()))
             .andExpect(jsonPath("$.location").value(DEFAULT_LOCATION.toString()))
             .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()));

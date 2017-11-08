@@ -8,6 +8,8 @@ import com.jobvacancy.repository.UserRepository;
 import com.jobvacancy.security.SecurityUtils;
 import com.jobvacancy.web.rest.util.HeaderUtil;
 import com.jobvacancy.web.rest.util.PaginationUtil;
+import com.jobvacancy.web.rest.util.Search;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -27,7 +29,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.LinkedList;
 import java.util.Optional;
-import java.util.regex.Pattern;
 
 /**
  * REST controller for managing JobOffer.
@@ -235,16 +236,8 @@ public class JobOfferResource {
             throws URISyntaxException {
     	List<JobOffer> allJobs =  jobOfferRepository.findAll();;
     	Page<JobOffer> page =createJobOfferPage(allJobs);
-		List<JobOffer> searchJobs = new LinkedList<JobOffer>();
 		if (isSearch && word!=null){
-    		Iterator<JobOffer> it =allJobs.iterator();
-    		while(it.hasNext()){
-    			JobOffer job=it.next();
-    			if(job.getTitle().contains(word)){
-        			searchJobs.add(job);
-    			}
-    		}
-    		page = createJobOfferPage(searchJobs);
+    		page = createJobOfferPage(new Search().search(allJobs,word));
     	}
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/offers");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
