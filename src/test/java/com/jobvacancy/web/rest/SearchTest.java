@@ -1,4 +1,4 @@
-/*package com.jobvacancy.web.rest;
+package com.jobvacancy.web.rest;
 import static org.assertj.core.api.StrictAssertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
@@ -60,11 +60,11 @@ public class SearchTest {
 	 jobOfferRepository.saveAndFlush(jobOffer2);
 	 
 	 List<JobOffer> list = jobOfferRepository.findAll();
-	 List<JobOffer> listJobOffer = new Search().search(list,"programador"); 
+	 List<JobOffer> listJobOffer = new Search().search(list,"Programador"); 
 	 
 	 assertEquals(1,listJobOffer.size());
 	 assertThat(listJobOffer.get(0).getTitle()).isEqualTo("Tester java");
 	 assertThat(listJobOffer.get(0).getLocation()).isEqualTo(DEFAULT_LOCATION);
 	 assertThat(listJobOffer.get(0).getDescription()).isEqualTo("Programador java para testeo de aplicaciones");
 	 }
-}*/
+}
