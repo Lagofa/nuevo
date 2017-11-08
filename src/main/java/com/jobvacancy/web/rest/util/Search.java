@@ -11,7 +11,9 @@ public class Search {
 		List<JobOffer> searchJobs = new LinkedList<JobOffer>();
 		while(it.hasNext()){
 			JobOffer job=it.next();
-			if(job.getDescription().contains(word)){
+			String descripcion= job.getDescription().toLowerCase();
+			String wordMin= word.toLowerCase();
+			if(descripcion.contains(wordMin)){
     			searchJobs.add(job);
 			}
 		}
