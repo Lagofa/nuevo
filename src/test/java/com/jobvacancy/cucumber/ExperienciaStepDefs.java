@@ -21,6 +21,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.jobvacancy.Application;
@@ -59,6 +60,8 @@ public class ExperienciaStepDefs {
 
     private JobOffer jobOffer;
 
+    private ResultActions actions;
+
     @Before
     public void setup() {
     	 MockitoAnnotations.initMocks(this);
@@ -94,7 +97,16 @@ public class ExperienciaStepDefs {
                 .content(TestUtil.convertObjectToJsonBytes(jobOffer)))
                 .andExpect(status().isCreated());
 	}
-
+	
+	@When("^ingresa (\\d+) negativo como experiencia requerida and save nueva oferta de trabajo$")
+	public void ingresa_negativo_como_experiencia_requerida_and_save_nueva_oferta_de_trabajo(int arg1) throws Throwable {
+		jobOffer.setExperiencia(new Long(-arg1));
+		actions=restJobOfferMockMvc.perform(post("/api/jobOffers")
+                .contentType(TestUtil.APPLICATION_JSON_UTF8)
+                .content(TestUtil.convertObjectToJsonBytes(jobOffer)))
+                .andExpect(status().isBadRequest());
+	}
+	
 	@Then("^se crea una oferta con (\\d+) como experiencia requerida$")
 	public void se_crea_una_oferta_con_como_experiencia_requerida(int arg1) throws Throwable {
 		 List<JobOffer> jobOffers = jobOfferRepository.findAll();
@@ -109,6 +121,11 @@ public class ExperienciaStepDefs {
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
                 .content(TestUtil.convertObjectToJsonBytes(jobOffer)))
                 .andExpect(status().isCreated());
+	}
+	
+	@Then("^no se crea una oferta de trabajo$")
+	public void no_se_crea_una_oferta_de_trabajo() throws Throwable {
+	    actions.andExpect(status().isBadRequest());
 	}
 
 }

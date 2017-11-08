@@ -9,3 +9,8 @@ Scenario: El oferente no especifica un numero de experiencia requerida para la o
 	Given el oferente llena el campos tittle and llena el campo description
 	When save nueva oferta de trabajo
 	Then se crea una oferta con 0 como experiencia requerida
+	
+Scenario: El oferente especifica un numero negativo de experiencia requerida para la oferta
+	Given el oferente llena el campos tittle and llena el campo description
+	When ingresa 4 negativo como experiencia requerida and save nueva oferta de trabajo
+	Then no se crea una oferta de trabajo

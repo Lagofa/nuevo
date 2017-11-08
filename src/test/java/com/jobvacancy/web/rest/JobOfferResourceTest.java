@@ -222,6 +222,18 @@ public class JobOfferResourceTest {
         restJobOfferMockMvc.perform(get("/api/jobOffers/{id}", Long.MAX_VALUE))
                 .andExpect(status().isNotFound());
     }
+    
+    @Test
+    @Transactional
+    public void nonCreateJobOffer() throws Exception {
+    	jobOffer.setExperiencia(new Long(-4));
+    	restJobOfferMockMvc.perform(post("/api/jobOffers")
+                .contentType(TestUtil.APPLICATION_JSON_UTF8)
+                .content(TestUtil.convertObjectToJsonBytes(jobOffer)))
+                .andExpect(status().isBadRequest());
+    }
+    
+    
 
     @Test
     @Transactional

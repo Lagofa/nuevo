@@ -61,7 +61,10 @@ public class JobOfferResource {
         jobOffer.setOwner(currentUser.get());
         if(jobOffer.getExperiencia()==null){
         	jobOffer.setExperiencia(new Long(0));;
-        }
+        }else
+        	if(jobOffer.getExperiencia()<new Long(0)){
+        		return ResponseEntity.badRequest().header("Failure", "Ingrese un numero mayor o igual a 0").body(null);	
+        	}
         	
         JobOffer result = jobOfferRepository.save(jobOffer);
         return ResponseEntity.created(new URI("/api/jobOffers/" + result.getId()))
