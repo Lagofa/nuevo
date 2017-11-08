@@ -25,7 +25,9 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Iterator;
 import java.util.List;
+import java.util.LinkedList;
 import java.util.Optional;
+import java.util.regex.Pattern;
 
 /**
  * REST controller for managing JobOffer.
@@ -101,94 +103,98 @@ public class JobOfferResource {
     }
 */
 
-    @RequestMapping(value = "/jobOffers",
+     @RequestMapping(value = "/jobOffers",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     public ResponseEntity<List<JobOffer>> getAllJobOffers(Pageable pageable)
         throws URISyntaxException {
         List<JobOffer> list = jobOfferRepository.findByOwnerIsCurrentUser();
-        Page<JobOffer> page = new Page<JobOffer>() {
-            @Override
-            public int getTotalPages() {
-                return 1;
-            }
-
-            @Override
-            public long getTotalElements() {
-                return list.size();
-            }
-
-            @Override
-            public int getNumber() {
-                return 0;
-            }
-
-            @Override
-            public int getSize() {
-                return list.size();
-            }
-
-            @Override
-            public int getNumberOfElements() {
-                return list.size();
-            }
-
-            @Override
-            public List<JobOffer> getContent() {
-                return list;
-            }
-
-            @Override
-            public boolean hasContent() {
-                return true;
-            }
-
-            @Override
-            public Sort getSort() {
-                return null;
-            }
-
-            @Override
-            public boolean isFirst() {
-                return true;
-            }
-
-            @Override
-            public boolean isLast() {
-                return true;
-            }
-
-            @Override
-            public boolean hasNext() {
-                return false;
-            }
-
-            @Override
-            public boolean hasPrevious() {
-                return false;
-            }
-
-            @Override
-            public Pageable nextPageable() {
-                return null;
-            }
-
-            @Override
-            public Pageable previousPageable() {
-                return null;
-            }
-
-            @Override
-            public Iterator<JobOffer> iterator() {
-                return list.iterator();
-            }
-        };
+        Page<JobOffer> page = createJobOfferPage(list);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/jobOffers");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
-    /**
+	private Page<JobOffer> createJobOfferPage(final List<JobOffer> list) {
+	    return new Page<JobOffer>() {
+	        @Override
+	        public int getTotalPages() {
+	            return 1;
+	        }
+	
+	        @Override
+	        public long getTotalElements() {
+	            return list.size();
+	        }
+	
+	        @Override
+	        public int getNumber() {
+	            return 0;
+	        }
+	
+	        @Override
+	        public int getSize() {
+	            return list.size();
+	        }
+	
+	        @Override
+	        public int getNumberOfElements() {
+	            return list.size();
+	        }
+	
+	        @Override
+	        public List<JobOffer> getContent() {
+	            return list;
+	        }
+	
+	        @Override
+	        public boolean hasContent() {
+	            return true;
+	        }
+	
+	        @Override
+	        public Sort getSort() {
+	            return null;
+	        }
+	
+	        @Override
+	        public boolean isFirst() {
+	            return true;
+	        }
+	
+	        @Override
+	        public boolean isLast() {
+	            return true;
+	        }
+	
+	        @Override
+	        public boolean hasNext() {
+	            return false;
+	        }
+	
+	        @Override
+	        public boolean hasPrevious() {
+	            return false;
+	        }
+	
+	        @Override
+	        public Pageable nextPageable() {
+	            return null;
+	        }
+	
+	        @Override
+	        public Pageable previousPageable() {
+	            return null;
+	        }
+	
+	        @Override
+	        public Iterator<JobOffer> iterator() {
+	            return list.iterator();
+	        }
+	    };
+	}
+   
+ /**
      * GET  /jobOffers/:id -> get the "id" jobOffer.
      */
     @RequestMapping(value = "/jobOffers/{id}",
@@ -218,18 +224,29 @@ public class JobOfferResource {
     }
 
 
-    /**
-     * GET  /jobOffers -> get all the jobOffers.
+   /**
+     * GET  /jobOffers -> get search jobOffers.
      */
     @RequestMapping(value = "/offers",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<List<JobOffer>> getAllOffers(Pageable pageable)
+    public ResponseEntity<List<JobOffer>> getSearchOffers(String word, boolean isSearch)
             throws URISyntaxException {
-        Page<JobOffer> page = jobOfferRepository.findAll(pageable);
+    	List<JobOffer> allJobs =  jobOfferRepository.findAll();;
+    	Page<JobOffer> page =createJobOfferPage(allJobs);
+		List<JobOffer> searchJobs = new LinkedList<JobOffer>();
+		if (isSearch && word!=null){
+    		Iterator<JobOffer> it =allJobs.iterator();
+    		while(it.hasNext()){
+    			JobOffer job=it.next();
+    			if(job.getTitle().contains(word)){
+        			searchJobs.add(job);
+    			}
+    		}
+    		page = createJobOfferPage(searchJobs);
+    	}
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/offers");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
-
 }
