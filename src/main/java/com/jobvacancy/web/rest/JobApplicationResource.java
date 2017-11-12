@@ -1,6 +1,7 @@
 package com.jobvacancy.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.jobvacancy.domain.JobApplication;
 import com.jobvacancy.domain.JobOffer;
 import com.jobvacancy.domain.User;
 import com.jobvacancy.repository.JobOfferRepository;
@@ -43,7 +44,7 @@ public class JobApplicationResource {
         method = RequestMethod.POST,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<JobOffer> createJobApplication(@Valid @RequestBody JobApplicationDTO jobApplication) throws URISyntaxException {
+    public ResponseEntity<JobOffer> createJobApplication(@Valid @RequestBody JobApplication jobApplication) throws URISyntaxException {
         log.debug("REST request to save JobApplication : {}", jobApplication);
         JobOffer jobOffer = jobOfferRepository.findOne(jobApplication.getOfferId());
         this.mailService.sendApplication(jobApplication.getEmail(), jobOffer);
