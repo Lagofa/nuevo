@@ -1,0 +1,9 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building jobvacancy 0.0.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:1.2.6.RELEASE:run (default-cli) @ jobvacancy >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-versions) @ jobvacancy ---

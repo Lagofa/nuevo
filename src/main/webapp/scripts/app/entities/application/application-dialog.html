@@ -28,7 +28,7 @@
         </div>
         <div class="form-group">
             <label for="field_email">Your Email</label>
-            <input type="text" class="form-control" name="location" id="field_email"
+            <input type="text" class="form-control" name="email" id="field_email"
                     ng-model="jobApplication.email"
                     required>
             <div ng-show="editForm.email.$invalid">
@@ -38,7 +38,23 @@
                 </p>
             </div>
         </div>
-
+	<div class="form-group">
+            <label for="field_link">Your Link To A CV</label>
+            <input type="link" class="form-control" name="link" id="field_link" 
+		    ng-model="jobApplication.link_CV"
+		    ng-pattern="/(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/"
+                    required>
+            <div ng-show="editForm.link.$invalid | editForm.link.$error.pattern">
+                <p class="help-block"
+                   ng-show="editForm.link.$error.required">
+                    This field is required.
+                </p>
+		<p class="help-block"
+                    ng-show="!editForm.link.$error.required && editForm.link.$error.pattern">
+                    Invalid link
+                </p>
+            </div>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">

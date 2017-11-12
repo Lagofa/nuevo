@@ -11,11 +11,11 @@ public class Search {
 		List<JobOffer> searchJobs = new LinkedList<JobOffer>();
 		while(it.hasNext()){
 			JobOffer job=it.next();
-				String descripcion= job.getDescription().toLowerCase();
-				String wordMin= word.toLowerCase();
-				if(descripcion.contains(wordMin)){
-	    			searchJobs.add(job);
-				}
+			String descripcion= job.getDescription().toLowerCase();
+			String wordMin= word.toLowerCase();
+			if(descripcion.contains(wordMin)){
+    			searchJobs.add(job);
+			}
 		}
 		
 		return searchJobs;
