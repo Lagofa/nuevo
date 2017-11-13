@@ -38,10 +38,15 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
@@ -117,7 +122,8 @@ public class JobOfferResourceTest {
         jobOffer.setLocation(DEFAULT_LOCATION);
         jobOffer.setDescription(DEFAULT_DESCRIPTION);
         jobOffer.setExperiencia(null);
-
+        jobOffer.setStartDate(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+        jobOffer.setEndDate(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
     }
 
     public static class MockSecurityContext implements SecurityContext {
@@ -283,4 +289,50 @@ public class JobOfferResourceTest {
         List<JobOffer> jobOffers = jobOfferRepository.findAll();
         assertThat(jobOffers).hasSize(databaseSizeBeforeDelete - 1);
     }
+    
+    @Test
+    @Transactional
+    public void createJobOfferWhicStartDateAndEndDateInThePresent() throws Exception {
+        int databaseSizeBeforeCreate = jobOfferRepository.findAll().size();
+        
+        restJobOfferMockMvc.perform(post("/api/jobOffers")
+                .contentType(TestUtil.APPLICATION_JSON_UTF8)
+                .content(TestUtil.convertObjectToJsonBytes(jobOffer)))
+                .andExpect(status().isCreated());
+
+        // Validate the JobOffer in the database
+        List<JobOffer> jobOffers = jobOfferRepository.findAll();
+        assertThat(jobOffers).hasSize(databaseSizeBeforeCreate + 1);
+        JobOffer testJobOffer = jobOffers.get(jobOffers.size() - 1);
+        assertThat(testJobOffer.getTitle()).isEqualTo(DEFAULT_TITLE);
+        assertThat(testJobOffer.getLocation()).isEqualTo(DEFAULT_LOCATION);
+        assertThat(testJobOffer.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
+        assertThat(testJobOffer.getExperiencia()).isEqualTo(DEFAULT_EXPERIENCIA);
+        assertThat(testJobOffer.getStartDate()).isEqualTo(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+        assertThat(testJobOffer.getEndDate()).isEqualTo(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));       
+    }
+    
+    @Transactional
+    public void createJobOfferWhicStartDateInThePresentAndEndDateInTheFuture() throws Exception {
+        int databaseSizeBeforeCreate = jobOfferRepository.findAll().size();
+        Date today=Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant());
+        Date tomorrow=new Date(today.getTime() + TimeUnit.DAYS.toMillis(1));
+        jobOffer.setEndDate(tomorrow);
+        restJobOfferMockMvc.perform(post("/api/jobOffers")
+                .contentType(TestUtil.APPLICATION_JSON_UTF8)
+                .content(TestUtil.convertObjectToJsonBytes(jobOffer)))
+                .andExpect(status().isCreated());
+
+        // Validate the JobOffer in the database
+        List<JobOffer> jobOffers = jobOfferRepository.findAll();
+        assertThat(jobOffers).hasSize(databaseSizeBeforeCreate + 1);
+        JobOffer testJobOffer = jobOffers.get(jobOffers.size() - 1);
+        assertThat(testJobOffer.getTitle()).isEqualTo(DEFAULT_TITLE);
+        assertThat(testJobOffer.getLocation()).isEqualTo(DEFAULT_LOCATION);
+        assertThat(testJobOffer.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
+        assertThat(testJobOffer.getExperiencia()).isEqualTo(DEFAULT_EXPERIENCIA);
+        assertThat(testJobOffer.getStartDate()).isEqualTo(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+        assertThat(testJobOffer.getEndDate()).isEqualTo(tomorrow);       
+    }
+
 }

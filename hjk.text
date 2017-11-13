@@ -1,0 +1,502 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building jobvacancy 0.0.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-versions) @ jobvacancy ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.4.201502262128:prepare-agent (pre-unit-tests) @ jobvacancy ---
+[INFO] surefireArgLine set to -javaagent:/home/lago/.m2/repository/org/jacoco/org.jacoco.agent/0.7.4.201502262128/org.jacoco.agent-0.7.4.201502262128-runtime.jar=destfile=/home/lago/prueba/nuevo/target/test-results/coverage/jacoco/jacoco.exec
+[INFO] 
+[INFO] --- maven-processor-plugin:2.2.4:process (process) @ jobvacancy ---
+[WARNING] diagnostic: warning: The following options were not recognized by any processor: '[mapstruct.defaultComponentModel, mapstruct.suppressGeneratorTimestamp]'
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ jobvacancy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] Copying 13 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ jobvacancy ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ jobvacancy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ jobvacancy ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ jobvacancy ---
+[INFO] Surefire report directory: /home/lago/prueba/nuevo/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.jobvacancy.cucumber.CucumberTest
+Feature: Como usuario quiero poder hacer busquedas en la pantalla de ofertas
+ _     _   ___   __  _____  ____  ___       __  _____   __    __    _
+| |_| | | | |_) ( (`  | |  | |_  | |_)     ( (`  | |   / /\  / /`  | |_/
+|_| | |_| |_|   _)_)  |_|  |_|__ |_| \     _)_)  |_|  /_/--\ \_\_, |_| \
+                             ____  ___   ___
+                            | |_  / / \ | |_)
+                            |_|   \_\_/ |_| \
+              _    __    _       __        ___   ____  _      __
+             | |  / /\  \ \  /  / /\      | | \ | |_  \ \  / ( (`
+           \_|_| /_/--\  \_\/  /_/--\     |_|_/ |_|__  \_\/  _)_)
+
+[INFO] com.jobvacancy.cucumber.BuscarStepDefs - Starting BuscarStepDefs on lago-SVF14214CLW with PID 4144 (/home/lago/prueba/nuevo/target/test-classes started by lago in /home/lago/prueba/nuevo)
+[DEBUG] com.jobvacancy.cucumber.BuscarStepDefs - Running with Spring Boot v1.2.6.RELEASE, Spring v4.1.7.RELEASE
+[DEBUG] com.jobvacancy.config.AsyncConfiguration - Creating Async Task Executor
+[DEBUG] com.jobvacancy.config.MetricsConfiguration - Registering JVM gauges
+[DEBUG] com.jobvacancy.config.DatabaseConfiguration - Configuring Datasource
+[DEBUG] com.jobvacancy.config.DatabaseConfiguration - Configuring Liquibase
+[WARN] com.jobvacancy.Application - No Spring profile configured, running with default configuration
+[DEBUG] com.jobvacancy.config.MailConfiguration - Configuring mail server
+[INFO] com.jobvacancy.config.ThymeleafConfiguration - loading non-reloadable mail messages resources
+[DEBUG] com.jobvacancy.config.apidoc.SwaggerConfiguration - Starting Swagger
+[DEBUG] com.jobvacancy.config.apidoc.SwaggerConfiguration - Started Swagger in 27 ms
+[DEBUG] com.jobvacancy.config.CacheConfiguration - Starting Ehcache
+[DEBUG] com.jobvacancy.config.CacheConfiguration - Registering Ehcache Metrics gauges
+[INFO] com.jobvacancy.cucumber.BuscarStepDefs - Started BuscarStepDefs in 28.303 seconds (JVM running for 32.18)
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+
+  Scenario: El usuario realiza una busqueda con la palabra en mayuscula.                             [90m# busqueda.feature:3[0m
+    [32mGiven [0m[32m​existe una oferta de "[0m[32m[1mprogramador java[0m[32m" and existe una oferta "[0m[32m[1mprogramador php[0m[32m"​[0m          [90m# BuscarStepDefs.existe_una_oferta_de_And_existe_una_oferta_​(String,String)[0m
+    [32mWhen [0m[32m​busco "[0m[32m[1mJAVA[0m[32m"[0m                                                                               [90m# BuscarStepDefs.busco(String)[0m
+    [32mThen [0m[32m​encuentro la busqueda "[0m[32m[1mprogramador java[0m[32m" and​ ​no encu​entro la busqueda "[0m[32m[1mprogramador php[0m[32m"[0m [90m# BuscarStepDefs.encuentro_la_busqueda_And​_​no_encu​entro_la_busqueda(String,String)[0m
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+
+  Scenario: El usuario realiza una busqueda con la palabra en minuscula.                           [90m# busqueda.feature:8[0m
+    [32mGiven [0m[32m​existe una oferta de "[0m[32m[1mprogramador jaVa[0m[32m" and existe una oferta "[0m[32m[1mprogramador C[0m[32m"​[0m          [90m# BuscarStepDefs.existe_una_oferta_de_And_existe_una_oferta_​(String,String)[0m
+    [32mWhen [0m[32m​busco "[0m[32m[1mjava[0m[32m"[0m                                                                             [90m# BuscarStepDefs.busco(String)[0m
+    [32mThen [0m[32m​encuentro la busqueda "[0m[32m[1mprogramador jaVa[0m[32m" and​ ​no encu​entro la busqueda "[0m[32m[1mprogramador C[0m[32m"[0m [90m# BuscarStepDefs.encuentro_la_busqueda_And​_​no_encu​entro_la_busqueda(String,String)[0m
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+
+  Scenario: El usuario realiza una busqueda con la palabra con letras mayusculas y minusculas.     [90m# busqueda.feature:13[0m
+    [32mGiven [0m[32m​existe una oferta de "[0m[32m[1mprogramador java[0m[32m" and existe una oferta "[0m[32m[1mprogramador C[0m[32m"​[0m          [90m# BuscarStepDefs.existe_una_oferta_de_And_existe_una_oferta_​(String,String)[0m
+    [32mWhen [0m[32m​busco "[0m[32m[1mjaVa[0m[32m"[0m                                                                             [90m# BuscarStepDefs.busco(String)[0m
+    [32mThen [0m[32m​encuentro la busqueda "[0m[32m[1mprogramador java[0m[32m" and​ ​no encu​entro la busqueda "[0m[32m[1mprogramador C[0m[32m"[0m [90m# BuscarStepDefs.encuentro_la_busqueda_And​_​no_encu​entro_la_busqueda(String,String)[0m
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+
+  Scenario: El usuario realiza una busqueda sin ninguna palabra.                                [90m# busqueda.feature:18[0m
+    [32mGiven [0m[32m​existe una oferta de "[0m[32m[1mprogramador java[0m[32m" and existe una oferta "[0m[32m[1mprogramador C[0m[32m"​[0m       [90m# BuscarStepDefs.existe_una_oferta_de_And_existe_una_oferta_​(String,String)[0m
+    [32mWhen [0m[32m​busco "[0m[32m[1m[0m[32m"[0m                                                                              [90m# BuscarStepDefs.busco(String)[0m
+    [32mThen [0m[32m​encuentro la busqueda "[0m[32m[1mprogramador java[0m[32m" and​ ​encu​entro la busqueda "[0m[32m[1mprogramador C[0m[32m"[0m [90m# BuscarStepDefs.encuentro_la_busqueda_and​_​encu​entro_la_busqueda(String,String)[0m
+
+  Scenario: El usuario realiza una busqueda con dos palabras.                                                 [90m# busqueda.feature:23[0m
+    [32mGiven [0m[32m​existe una oferta de "[0m[32m[1mprogramador java[0m[32m" and existe una oferta "[0m[32m[1mprogramador junior java[0m[32m"​[0m           [90m# BuscarStepDefs.existe_una_oferta_de_And_existe_una_oferta_​(String,String)[0m
+    [32mWhen [0m[32m​busco "[0m[32m[1mprogramador java[0m[32m"[0m                                                                            [90m# BuscarStepDefs.busco(String)[0m
+    [32mThen [0m[32m​encuentro la busqueda "[0m[32m[1mprogramador java[0m[32m" and​ ​ no encu​entro la busqueda "[0m[32m[1mprogramador junior java[0m[32m"[0m [90m# BuscarStepDefs.encuentro_la_busqueda_and​_​_no_encu​entro_la_busqueda(String,String)[0m
+Feature: El oferente especifica la experiencia requerida para las ofertas.
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+[DEBUG] com.jobvacancy.web.rest.JobOfferResource - REST request to save JobOffer : JobOffer{id=null, title='java', location='null', description='Programador java', experiencia='4', startDate='null', endDate='null'}
+Hibernate: insert into job_offer (id, description, end_date, experiencia, location, owner_id, start_date, title) values (null, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select joboffer0_.id as id1_6_, joboffer0_.description as descript2_6_, joboffer0_.end_date as end_date6_6_, joboffer0_.experiencia as experien3_6_, joboffer0_.location as location4_6_, joboffer0_.owner_id as owner_id8_6_, joboffer0_.start_date as start_da7_6_, joboffer0_.title as title5_6_ from job_offer joboffer0_
+Hibernate: select user0_.id as id1_4_0_, user0_.created_by as created_2_4_0_, user0_.created_date as created_3_4_0_, user0_.last_modified_by as last_mod4_4_0_, user0_.last_modified_date as last_mod5_4_0_, user0_.activated as activate6_4_0_, user0_.activation_key as activati7_4_0_, user0_.email as email8_4_0_, user0_.first_name as first_na9_4_0_, user0_.lang_key as lang_ke10_4_0_, user0_.last_name as last_na11_4_0_, user0_.login as login12_4_0_, user0_.password as passwor13_4_0_, user0_.reset_date as reset_d14_4_0_, user0_.reset_key as reset_k15_4_0_ from jhi_user user0_ where user0_.id=?
+Hibernate: select joboffer0_.id as id1_6_, joboffer0_.description as descript2_6_, joboffer0_.end_date as end_date6_6_, joboffer0_.experiencia as experien3_6_, joboffer0_.location as location4_6_, joboffer0_.owner_id as owner_id8_6_, joboffer0_.start_date as start_da7_6_, joboffer0_.title as title5_6_ from job_offer joboffer0_
+Hibernate: select user0_.id as id1_4_0_, user0_.created_by as created_2_4_0_, user0_.created_date as created_3_4_0_, user0_.last_modified_by as last_mod4_4_0_, user0_.last_modified_date as last_mod5_4_0_, user0_.activated as activate6_4_0_, user0_.activation_key as activati7_4_0_, user0_.email as email8_4_0_, user0_.first_name as first_na9_4_0_, user0_.lang_key as lang_ke10_4_0_, user0_.last_name as last_na11_4_0_, user0_.login as login12_4_0_, user0_.password as passwor13_4_0_, user0_.reset_date as reset_d14_4_0_, user0_.reset_key as reset_k15_4_0_ from jhi_user user0_ where user0_.id=?
+Hibernate: delete from job_offer where id=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+
+  Scenario: El oferente especifica un numero de experiencia requerida para la oferta [90m# experiencia.feature:3[0m
+    [32mGiven [0m[32mel oferente llena el campos tittle and llena el campo description[0m          [90m# ExperienciaStepDefs.el_oferente_llena_el_campos_tittle_and_llena_el_campo_description()[0m
+    [32mWhen [0m[32mingresa [0m[32m[1m4[0m[32m como experiencia requerida and save nueva oferta de trabajo[0m       [90m# ExperienciaStepDefs.ingresa_como_experiencia_requerida_and_save_nueva_oferta_de_trabajo(int)[0m
+    [32mThen [0m[32mse crea una oferta con [0m[32m[1m4[0m[32m como experiencia requerida[0m                         [90m# ExperienciaStepDefs.se_crea_una_oferta_con_como_experiencia_requerida(int)[0m
+[DEBUG] com.jobvacancy.web.rest.JobOfferResource - REST request to save JobOffer : JobOffer{id=null, title='java', location='null', description='Programador java', experiencia='null', startDate='null', endDate='null'}
+Hibernate: insert into job_offer (id, description, end_date, experiencia, location, owner_id, start_date, title) values (null, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select joboffer0_.id as id1_6_, joboffer0_.description as descript2_6_, joboffer0_.end_date as end_date6_6_, joboffer0_.experiencia as experien3_6_, joboffer0_.location as location4_6_, joboffer0_.owner_id as owner_id8_6_, joboffer0_.start_date as start_da7_6_, joboffer0_.title as title5_6_ from job_offer joboffer0_
+Hibernate: select user0_.id as id1_4_0_, user0_.created_by as created_2_4_0_, user0_.created_date as created_3_4_0_, user0_.last_modified_by as last_mod4_4_0_, user0_.last_modified_date as last_mod5_4_0_, user0_.activated as activate6_4_0_, user0_.activation_key as activati7_4_0_, user0_.email as email8_4_0_, user0_.first_name as first_na9_4_0_, user0_.lang_key as lang_ke10_4_0_, user0_.last_name as last_na11_4_0_, user0_.login as login12_4_0_, user0_.password as passwor13_4_0_, user0_.reset_date as reset_d14_4_0_, user0_.reset_key as reset_k15_4_0_ from jhi_user user0_ where user0_.id=?
+Hibernate: select joboffer0_.id as id1_6_, joboffer0_.description as descript2_6_, joboffer0_.end_date as end_date6_6_, joboffer0_.experiencia as experien3_6_, joboffer0_.location as location4_6_, joboffer0_.owner_id as owner_id8_6_, joboffer0_.start_date as start_da7_6_, joboffer0_.title as title5_6_ from job_offer joboffer0_
+Hibernate: select user0_.id as id1_4_0_, user0_.created_by as created_2_4_0_, user0_.created_date as created_3_4_0_, user0_.last_modified_by as last_mod4_4_0_, user0_.last_modified_date as last_mod5_4_0_, user0_.activated as activate6_4_0_, user0_.activation_key as activati7_4_0_, user0_.email as email8_4_0_, user0_.first_name as first_na9_4_0_, user0_.lang_key as lang_ke10_4_0_, user0_.last_name as last_na11_4_0_, user0_.login as login12_4_0_, user0_.password as passwor13_4_0_, user0_.reset_date as reset_d14_4_0_, user0_.reset_key as reset_k15_4_0_ from jhi_user user0_ where user0_.id=?
+Hibernate: delete from job_offer where id=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+
+  Scenario: El oferente no especifica un numero de experiencia requerida para la oferta [90m# experiencia.feature:8[0m
+    [32mGiven [0m[32mel oferente llena el campos tittle and llena el campo description[0m             [90m# ExperienciaStepDefs.el_oferente_llena_el_campos_tittle_and_llena_el_campo_description()[0m
+    [32mWhen [0m[32msave nueva oferta de trabajo[0m                                                   [90m# ExperienciaStepDefs.save_nueva_oferta_de_trabajo()[0m
+    [32mThen [0m[32mse crea una oferta con [0m[32m[1m0[0m[32m como experiencia requerida[0m                            [90m# ExperienciaStepDefs.se_crea_una_oferta_con_como_experiencia_requerida(int)[0m
+[DEBUG] com.jobvacancy.web.rest.JobOfferResource - REST request to save JobOffer : JobOffer{id=null, title='java', location='null', description='Programador java', experiencia='-4', startDate='null', endDate='null'}
+
+  Scenario: El oferente especifica un numero negativo de experiencia requerida para la oferta [90m# experiencia.feature:13[0m
+    [32mGiven [0m[32mel oferente llena el campos tittle and llena el campo description[0m                   [90m# ExperienciaStepDefs.el_oferente_llena_el_campos_tittle_and_llena_el_campo_description()[0m
+    [32mWhen [0m[32mingresa [0m[32m[1m4[0m[32m negativo como experiencia requerida and save nueva oferta de trabajo[0m       [90m# ExperienciaStepDefs.ingresa_negativo_como_experiencia_requerida_and_save_nueva_oferta_de_trabajo(int)[0m
+    [32mThen [0m[32mno se crea una oferta de trabajo[0m                                                     [90m# ExperienciaStepDefs.no_se_crea_una_oferta_de_trabajo()[0m
+Feature: El postulante agrega un link a su CV cuando se postula a una jobOffer
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+[DEBUG] com.jobvacancy.web.rest.JobOfferResource - REST request to save JobApplication : com.jobvacancy.web.rest.dto.JobApplicationDTO@10de4ed9
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+
+  Scenario: El postulante ingresa un link valido a su CV al postularse a una jobOffer                                                                                                         [90m# linkCV.feature:3[0m
+    [32mGiven [0m[32mel postulante ha ingresado su nombre y un mail[0m                                                                                                                                      [90m# linKCVStepDefs.el_postulante_ha_ingresado_su_nombre_y_un_mail()[0m
+    [32mWhen [0m[32mel postulante ingresa un link valido "[0m[32m[1mhttps://www.linkedin.com/profile/view?id=AAMAABhp-akBJJDtLnfvsXb-3Ur2820svaUvhaU&trk=hp-identity-name[0m[32m" a su CV and se postula para la jobOffer[0m [90m# linKCVStepDefs.el_postulante_ingresa_un_link_valido_a_su_CV_and_se_postula_para_la_jobOffer(String)[0m
+    [31mThen [0m[31mse envia mail al oferente de la jobOffer[0m                                                                                                                                             [90m# linKCVStepDefs.se_envia_mail_al_oferente_de_la_jobOffer()[0m
+      [31mjava.lang.AssertionError: Status expected:<202> but was:<400>
+      	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:60)
+      	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:89)
+      	at org.springframework.test.web.servlet.result.StatusResultMatchers$10.match(StatusResultMatchers.java:653)
+      	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:152)
+      	at com.jobvacancy.cucumber.linKCVStepDefs.se_envia_mail_al_oferente_de_la_jobOffer(linKCVStepDefs.java:106)
+      	at ✽.Then se envia mail al oferente de la jobOffer(linkCV.feature:6)
+      [0m
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+[DEBUG] com.jobvacancy.web.rest.JobOfferResource - REST request to save JobApplication : com.jobvacancy.web.rest.dto.JobApplicationDTO@95d4417
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+
+  Scenario: El postulante ingresa un link invalido a su CV al postularse a una jobOffer                                                                                                       [90m# linkCV.feature:8[0m
+    [32mGiven [0m[32mel postulante ha ingresado su nombre y un mail[0m                                                                                                                                      [90m# linKCVStepDefs.el_postulante_ha_ingresado_su_nombre_y_un_mail()[0m
+    [32mWhen [0m[32mel postulante ingresa un link invalido "[0m[32m[1mhps://www.linkedin.com/profile/view?id=AAMAABhp-akBJJDtLnfvsXb-3Ur2820svaUvhaU&trk=hp-identity-name[0m[32m" a su CV and se postula para la jobOffer[0m [90m# linKCVStepDefs.el_postulante_ingresa_un_link_invalido_a_su_CV_and_se_postula_para_la_jobOffer(String)[0m
+    [31mThen [0m[31mno se envia mail al oferente de la jobOffer[0m                                                                                                                                          [90m# linKCVStepDefs.no_se_envia_mail_al_oferente_de_la_jobOffer()[0m
+      [31mjava.lang.AssertionError: Status expected:<400> but was:<202>
+      	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:60)
+      	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:89)
+      	at org.springframework.test.web.servlet.result.StatusResultMatchers$10.match(StatusResultMatchers.java:653)
+      	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:152)
+      	at com.jobvacancy.cucumber.linKCVStepDefs.no_se_envia_mail_al_oferente_de_la_jobOffer(linKCVStepDefs.java:121)
+      	at ✽.Then no se envia mail al oferente de la jobOffer(linkCV.feature:11)
+      [0m
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+[DEBUG] com.jobvacancy.web.rest.JobOfferResource - REST request to save JobApplication : com.jobvacancy.web.rest.dto.JobApplicationDTO@306bac1e
+
+  Scenario: El postulante no ingresa un link a su CV al postularse a una jobOffer [90m# linkCV.feature:13[0m
+    [32mGiven [0m[32mel postulante ha ingresado su nombre y un mail[0m                          [90m# linKCVStepDefs.el_postulante_ha_ingresado_su_nombre_y_un_mail()[0m
+    [32mWhen [0m[32mel postulante no ingresa un link a su CV and se postula para la jobOffer[0m [90m# linKCVStepDefs.el_postulante_no_ingresa_un_link_a_su_CV_and_se_postula_para_la_jobOffer()[0m
+    [31mThen [0m[31mno se envia mail al oferente de la jobOffer[0m                              [90m# linKCVStepDefs.no_se_envia_mail_al_oferente_de_la_jobOffer()[0m
+      [31mjava.lang.AssertionError: Status expected:<400> but was:<202>
+      	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:60)
+      	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:89)
+      	at org.springframework.test.web.servlet.result.StatusResultMatchers$10.match(StatusResultMatchers.java:653)
+      	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:152)
+      	at com.jobvacancy.cucumber.linKCVStepDefs.no_se_envia_mail_al_oferente_de_la_jobOffer(linKCVStepDefs.java:121)
+      	at ✽.Then no se envia mail al oferente de la jobOffer(linkCV.feature:16)
+      [0m
+Feature: User management
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+[DEBUG] com.jobvacancy.web.rest.UserResource - REST request to get User : admin
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select authoritie0_.user_id as user_id1_4_0_, authoritie0_.authority_name as authorit2_5_0_, authority1_.name as name1_0_1_ from jhi_user_authority authoritie0_ inner join jhi_authority authority1_ on authoritie0_.authority_name=authority1_.name where authoritie0_.user_id=?
+
+  Scenario: Retrieve administrator user  [90m# user.feature:3[0m
+    [32mWhen [0m[32mI search user '[0m[32m[1madmin[0m[32m'[0m           [90m# UserStepDefs.i_search_user_admin(String)[0m
+    [32mThen [0m[32mthe user is found[0m               [90m# UserStepDefs.the_user_is_found()[0m
+    [32mAnd [0m[32mhis last name is '[0m[32m[1mAdministrator[0m[32m'[0m [90m# UserStepDefs.his_last_name_is(String)[0m
+
+[31mFailed scenarios:[0m
+[31mlinkCV.feature:3 [0m# Scenario: El postulante ingresa un link valido a su CV al postularse a una jobOffer
+[31mlinkCV.feature:8 [0m# Scenario: El postulante ingresa un link invalido a su CV al postularse a una jobOffer
+[31mlinkCV.feature:13 [0m# Scenario: El postulante no ingresa un link a su CV al postularse a una jobOffer
+
+12 Scenarios ([31m3 failed[0m, [32m9 passed[0m)
+36 Steps ([31m3 failed[0m, [32m33 passed[0m)
+0m2,803s
+
+java.lang.AssertionError: Status expected:<202> but was:<400>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:60)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:89)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers$10.match(StatusResultMatchers.java:653)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:152)
+	at com.jobvacancy.cucumber.linKCVStepDefs.se_envia_mail_al_oferente_de_la_jobOffer(linKCVStepDefs.java:106)
+	at ✽.Then se envia mail al oferente de la jobOffer(linkCV.feature:6)
+
+java.lang.AssertionError: Status expected:<400> but was:<202>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:60)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:89)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers$10.match(StatusResultMatchers.java:653)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:152)
+	at com.jobvacancy.cucumber.linKCVStepDefs.no_se_envia_mail_al_oferente_de_la_jobOffer(linKCVStepDefs.java:121)
+	at ✽.Then no se envia mail al oferente de la jobOffer(linkCV.feature:11)
+
+java.lang.AssertionError: Status expected:<400> but was:<202>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:60)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:89)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers$10.match(StatusResultMatchers.java:653)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:152)
+	at com.jobvacancy.cucumber.linKCVStepDefs.no_se_envia_mail_al_oferente_de_la_jobOffer(linKCVStepDefs.java:121)
+	at ✽.Then no se envia mail al oferente de la jobOffer(linkCV.feature:16)
+
+Tests run: 48, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 33.376 sec <<< FAILURE! - in com.jobvacancy.cucumber.CucumberTest
+Then se envia mail al oferente de la jobOffer(Scenario: El postulante ingresa un link valido a su CV al postularse a una jobOffer)  Time elapsed: 0.014 sec  <<< FAILURE!
+java.lang.AssertionError: Status expected:<202> but was:<400>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:60)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:89)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers$10.match(StatusResultMatchers.java:653)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:152)
+	at com.jobvacancy.cucumber.linKCVStepDefs.se_envia_mail_al_oferente_de_la_jobOffer(linKCVStepDefs.java:106)
+	at ✽.Then se envia mail al oferente de la jobOffer(linkCV.feature:6)
+
+Scenario: El postulante ingresa un link valido a su CV al postularse a una jobOffer  Time elapsed: 0.015 sec  <<< FAILURE!
+java.lang.AssertionError: Status expected:<202> but was:<400>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:60)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:89)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers$10.match(StatusResultMatchers.java:653)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:152)
+	at com.jobvacancy.cucumber.linKCVStepDefs.se_envia_mail_al_oferente_de_la_jobOffer(linKCVStepDefs.java:106)
+	at ✽.Then se envia mail al oferente de la jobOffer(linkCV.feature:6)
+
+Then no se envia mail al oferente de la jobOffer(Scenario: El postulante ingresa un link invalido a su CV al postularse a una jobOffer)  Time elapsed: 0.002 sec  <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<202>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:60)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:89)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers$10.match(StatusResultMatchers.java:653)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:152)
+	at com.jobvacancy.cucumber.linKCVStepDefs.no_se_envia_mail_al_oferente_de_la_jobOffer(linKCVStepDefs.java:121)
+	at ✽.Then no se envia mail al oferente de la jobOffer(linkCV.feature:11)
+
+Scenario: El postulante ingresa un link invalido a su CV al postularse a una jobOffer  Time elapsed: 0.004 sec  <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<202>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:60)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:89)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers$10.match(StatusResultMatchers.java:653)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:152)
+	at com.jobvacancy.cucumber.linKCVStepDefs.no_se_envia_mail_al_oferente_de_la_jobOffer(linKCVStepDefs.java:121)
+	at ✽.Then no se envia mail al oferente de la jobOffer(linkCV.feature:11)
+
+Then no se envia mail al oferente de la jobOffer(Scenario: El postulante no ingresa un link a su CV al postularse a una jobOffer)  Time elapsed: 0.004 sec  <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<202>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:60)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:89)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers$10.match(StatusResultMatchers.java:653)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:152)
+	at com.jobvacancy.cucumber.linKCVStepDefs.no_se_envia_mail_al_oferente_de_la_jobOffer(linKCVStepDefs.java:121)
+	at ✽.Then no se envia mail al oferente de la jobOffer(linkCV.feature:16)
+
+Scenario: El postulante no ingresa un link a su CV al postularse a una jobOffer  Time elapsed: 0.004 sec  <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<202>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:60)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:89)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers$10.match(StatusResultMatchers.java:653)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:152)
+	at com.jobvacancy.cucumber.linKCVStepDefs.no_se_envia_mail_al_oferente_de_la_jobOffer(linKCVStepDefs.java:121)
+	at ✽.Then no se envia mail al oferente de la jobOffer(linkCV.feature:16)
+
+Running com.jobvacancy.security.SecurityUtilsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec - in com.jobvacancy.security.SecurityUtilsTest
+Running com.jobvacancy.service.UserServiceTest
+ _     _   ___   __  _____  ____  ___       __  _____   __    __    _
+| |_| | | | |_) ( (`  | |  | |_  | |_)     ( (`  | |   / /\  / /`  | |_/
+|_| | |_| |_|   _)_)  |_|  |_|__ |_| \     _)_)  |_|  /_/--\ \_\_, |_| \
+                             ____  ___   ___
+                            | |_  / / \ | |_)
+                            |_|   \_\_/ |_| \
+              _    __    _       __        ___   ____  _      __
+             | |  / /\  \ \  /  / /\      | | \ | |_  \ \  / ( (`
+           \_|_| /_/--\  \_\/  /_/--\     |_|_/ |_|__  \_\/  _)_)
+
+[INFO] com.jobvacancy.service.UserServiceTest - Starting UserServiceTest on lago-SVF14214CLW with PID 4144 (/home/lago/prueba/nuevo/target/test-classes started by lago in /home/lago/prueba/nuevo)
+[DEBUG] com.jobvacancy.service.UserServiceTest - Running with Spring Boot v1.2.6.RELEASE, Spring v4.1.7.RELEASE
+[DEBUG] com.jobvacancy.config.AsyncConfiguration - Creating Async Task Executor
+[DEBUG] com.jobvacancy.config.MetricsConfiguration - Registering JVM gauges
+[DEBUG] com.jobvacancy.config.DatabaseConfiguration - Configuring Datasource
+[DEBUG] com.jobvacancy.config.DatabaseConfiguration - Configuring Liquibase
+[WARN] org.hibernate.jpa.internal.EntityManagerFactoryRegistry - HHH000436: Entity manager factory name (default) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+[DEBUG] com.jobvacancy.config.MailConfiguration - Configuring mail server
+[WARN] com.jobvacancy.Application - No Spring profile configured, running with default configuration
+[INFO] com.jobvacancy.config.WebConfigurer - Web application configuration, using profiles: []
+[DEBUG] com.jobvacancy.config.WebConfigurer - Initializing Metrics registries
+[DEBUG] com.jobvacancy.config.WebConfigurer - Registering Metrics Filter
+[DEBUG] com.jobvacancy.config.WebConfigurer - Registering Metrics Servlet
+[INFO] com.jobvacancy.config.WebConfigurer - Web application fully configured
+[INFO] com.jobvacancy.config.ThymeleafConfiguration - loading non-reloadable mail messages resources
+[DEBUG] com.jobvacancy.config.apidoc.SwaggerConfiguration - Starting Swagger
+[DEBUG] com.jobvacancy.config.apidoc.SwaggerConfiguration - Started Swagger in 1 ms
+[DEBUG] com.jobvacancy.config.CacheConfiguration - Starting Ehcache
+[DEBUG] com.jobvacancy.config.CacheConfiguration - Registering Ehcache Metrics gauges
+[INFO] com.jobvacancy.service.UserServiceTest - Started UserServiceTest in 8.465 seconds (JVM running for 43.699)
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.email=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.email=?
+Hibernate: select authority0_.name as name1_0_0_ from jhi_authority authority0_ where authority0_.name=?
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[DEBUG] com.jobvacancy.service.UserService - Created Information for User: User{login='johndoe', firstName='John', lastName='Doe', email='john.doe@localhost', activated='true', langKey='en-US', activationKey='null'}
+[DEBUG] com.jobvacancy.service.UserService - Reset user password for reset key 1234
+Hibernate: update jhi_user set created_date=?, last_modified_by=?, last_modified_date=?, activated=?, activation_key=?, email=?, first_name=?, lang_key=?, last_name=?, login=?, password=?, reset_date=?, reset_key=? where id=?
+Hibernate: insert into jhi_user_authority (user_id, authority_name) values (?, ?)
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.reset_key=?
+Hibernate: select authority0_.name as name1_0_0_ from jhi_authority authority0_ where authority0_.name=?
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[DEBUG] com.jobvacancy.service.UserService - Created Information for User: User{login='johndoe', firstName='John', lastName='Doe', email='john.doe@localhost', activated='true', langKey='en-US', activationKey='null'}
+[DEBUG] com.jobvacancy.service.UserService - Reset user password for reset key 80445901384922957074
+Hibernate: update jhi_user set created_date=?, last_modified_by=?, last_modified_date=?, activated=?, activation_key=?, email=?, first_name=?, lang_key=?, last_name=?, login=?, password=?, reset_date=?, reset_key=? where id=?
+Hibernate: insert into jhi_user_authority (user_id, authority_name) values (?, ?)
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.reset_key=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.activated=0 and user0_.created_date<?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.activated=0 and user0_.created_date<?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select persistent0_.series as series1_3_, persistent0_.ip_address as ip_addre2_3_, persistent0_.token_date as token_da3_3_, persistent0_.token_value as token_va4_3_, persistent0_.user_id as user_id6_3_, persistent0_.user_agent as user_age5_3_ from jhi_persistent_token persistent0_ left outer join jhi_user user1_ on persistent0_.user_id=user1_.id where user1_.id=?
+Hibernate: select persistent0_.series as series1_3_0_, persistent0_.ip_address as ip_addre2_3_0_, persistent0_.token_date as token_da3_3_0_, persistent0_.token_value as token_va4_3_0_, persistent0_.user_id as user_id6_3_0_, persistent0_.user_agent as user_age5_3_0_ from jhi_persistent_token persistent0_ where persistent0_.series=?
+Hibernate: insert into jhi_persistent_token (ip_address, token_date, token_value, user_id, user_agent, series) values (?, ?, ?, ?, ?, ?)
+Hibernate: select persistent0_.series as series1_3_0_, persistent0_.ip_address as ip_addre2_3_0_, persistent0_.token_date as token_da3_3_0_, persistent0_.token_value as token_va4_3_0_, persistent0_.user_id as user_id6_3_0_, persistent0_.user_agent as user_age5_3_0_ from jhi_persistent_token persistent0_ where persistent0_.series=?
+Hibernate: insert into jhi_persistent_token (ip_address, token_date, token_value, user_id, user_agent, series) values (?, ?, ?, ?, ?, ?)
+Hibernate: select persistent0_.series as series1_3_, persistent0_.ip_address as ip_addre2_3_, persistent0_.token_date as token_da3_3_, persistent0_.token_value as token_va4_3_, persistent0_.user_id as user_id6_3_, persistent0_.user_agent as user_age5_3_ from jhi_persistent_token persistent0_ left outer join jhi_user user1_ on persistent0_.user_id=user1_.id where user1_.id=?
+Hibernate: select persistent0_.series as series1_3_, persistent0_.ip_address as ip_addre2_3_, persistent0_.token_date as token_da3_3_, persistent0_.token_value as token_va4_3_, persistent0_.user_id as user_id6_3_, persistent0_.user_agent as user_age5_3_ from jhi_persistent_token persistent0_ where persistent0_.token_date<?
+[DEBUG] com.jobvacancy.service.UserService - Deleting token 2222-2222
+Hibernate: select persistent0_.user_id as user_id6_4_0_, persistent0_.series as series1_3_0_, persistent0_.series as series1_3_1_, persistent0_.ip_address as ip_addre2_3_1_, persistent0_.token_date as token_da3_3_1_, persistent0_.token_value as token_va4_3_1_, persistent0_.user_id as user_id6_3_1_, persistent0_.user_agent as user_age5_3_1_ from jhi_persistent_token persistent0_ where persistent0_.user_id=?
+Hibernate: delete from jhi_persistent_token where series=?
+Hibernate: select persistent0_.series as series1_3_, persistent0_.ip_address as ip_addre2_3_, persistent0_.token_date as token_da3_3_, persistent0_.token_value as token_va4_3_, persistent0_.user_id as user_id6_3_, persistent0_.user_agent as user_age5_3_ from jhi_persistent_token persistent0_ left outer join jhi_user user1_ on persistent0_.user_id=user1_.id where user1_.id=?
+Hibernate: select authority0_.name as name1_0_0_ from jhi_authority authority0_ where authority0_.name=?
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[DEBUG] com.jobvacancy.service.UserService - Created Information for User: User{login='johndoe', firstName='John', lastName='Doe', email='john.doe@localhost', activated='true', langKey='en-US', activationKey='null'}
+[DEBUG] com.jobvacancy.service.UserService - Reset user password for reset key 01146028505091902132
+Hibernate: update jhi_user set created_date=?, last_modified_by=?, last_modified_date=?, activated=?, activation_key=?, email=?, first_name=?, lang_key=?, last_name=?, login=?, password=?, reset_date=?, reset_key=? where id=?
+Hibernate: insert into jhi_user_authority (user_id, authority_name) values (?, ?)
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.reset_key=?
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 9.531 sec - in com.jobvacancy.service.UserServiceTest
+Running com.jobvacancy.web.rest.AccountResourceTest
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.email=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.email=?
+Hibernate: select authority0_.name as name1_0_0_ from jhi_authority authority0_ where authority0_.name=?
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[DEBUG] com.jobvacancy.service.UserService - Created Information for User: User{login='badguy', firstName='Bad', lastName='Guy', email='badguy@example.com', activated='true', langKey='en', activationKey='null'}
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.email=?
+Hibernate: select authority0_.name as name1_0_0_ from jhi_authority authority0_ where authority0_.name=?
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[DEBUG] com.jobvacancy.service.UserService - Created Information for User: User{login='john', firstName='John', lastName='Doe', email='john@example.com', activated='true', langKey='en', activationKey='null'}
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.email=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.email=?
+Hibernate: select authority0_.name as name1_0_0_ from jhi_authority authority0_ where authority0_.name=?
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[DEBUG] com.jobvacancy.service.UserService - Created Information for User: User{login='alice', firstName='Alice', lastName='Something', email='alice@example.com', activated='true', langKey='en', activationKey='null'}
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.email=?
+[DEBUG] com.jobvacancy.web.rest.AccountResource - REST request to check if the current user is authenticated
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.email=?
+Hibernate: select authority0_.name as name1_0_0_ from jhi_authority authority0_ where authority0_.name=?
+Hibernate: insert into jhi_user (id, created_by, created_date, last_modified_by, last_modified_date, activated, activation_key, email, first_name, lang_key, last_name, login, password, reset_date, reset_key) values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[DEBUG] com.jobvacancy.service.UserService - Created Information for User: User{login='joe', firstName='Joe', lastName='Shmoe', email='joe@example.com', activated='true', langKey='en', activationKey='null'}
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+[DEBUG] com.jobvacancy.web.rest.AccountResource - REST request to check if the current user is authenticated
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.361 sec - in com.jobvacancy.web.rest.AccountResourceTest
+Running com.jobvacancy.web.rest.ApplicationResourceTest
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+[DEBUG] com.jobvacancy.web.rest.JobOfferResource - REST request to save JobApplication : com.jobvacancy.web.rest.dto.JobApplicationDTO@20933609
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+[DEBUG] com.jobvacancy.web.rest.JobOfferResource - REST request to save JobApplication : com.jobvacancy.web.rest.dto.JobApplicationDTO@2078401b
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.086 sec <<< FAILURE! - in com.jobvacancy.web.rest.ApplicationResourceTest
+createJobApplicationWhichLinkValid(com.jobvacancy.web.rest.ApplicationResourceTest)  Time elapsed: 0.017 sec  <<< FAILURE!
+java.lang.AssertionError: Status expected:<202> but was:<400>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:60)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:89)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers$10.match(StatusResultMatchers.java:653)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:152)
+	at com.jobvacancy.web.rest.ApplicationResourceTest.createJobApplicationWhichLinkValid(ApplicationResourceTest.java:100)
+
+createJobApplicationWhichLinkInvalid(com.jobvacancy.web.rest.ApplicationResourceTest)  Time elapsed: 0.011 sec  <<< FAILURE!
+java.lang.AssertionError: Status expected:<400> but was:<202>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:60)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:89)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers$10.match(StatusResultMatchers.java:653)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:152)
+	at com.jobvacancy.web.rest.ApplicationResourceTest.createJobApplicationWhichLinkInvalid(ApplicationResourceTest.java:115)
+
+Running com.jobvacancy.web.rest.AuditResourceTest
+Hibernate: select persistent0_.event_id as event_id1_1_, persistent0_.event_date as event_da2_1_, persistent0_.event_type as event_ty3_1_, persistent0_.principal as principa4_1_ from jhi_persistent_audit_event persistent0_
+Hibernate: select persistent0_.event_id as event_id1_1_0_, persistent0_.event_date as event_da2_1_0_, persistent0_.event_type as event_ty3_1_0_, persistent0_.principal as principa4_1_0_ from jhi_persistent_audit_event persistent0_ where persistent0_.event_id=?
+Hibernate: select persistent0_.event_id as event_id1_1_, persistent0_.event_date as event_da2_1_, persistent0_.event_type as event_ty3_1_, persistent0_.principal as principa4_1_ from jhi_persistent_audit_event persistent0_
+Hibernate: insert into jhi_persistent_audit_event (event_id, event_date, event_type, principal) values (null, ?, ?, ?)
+Hibernate: select persistent0_.event_id as event_id1_1_, persistent0_.event_date as event_da2_1_, persistent0_.event_type as event_ty3_1_, persistent0_.principal as principa4_1_ from jhi_persistent_audit_event persistent0_
+Hibernate: select persistent0_.event_id as event_id1_1_, persistent0_.event_date as event_da2_1_, persistent0_.event_type as event_ty3_1_, persistent0_.principal as principa4_1_ from jhi_persistent_audit_event persistent0_
+Hibernate: insert into jhi_persistent_audit_event (event_id, event_date, event_type, principal) values (null, ?, ?, ?)
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.166 sec - in com.jobvacancy.web.rest.AuditResourceTest
+Running com.jobvacancy.web.rest.JobOfferResourceTest
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select joboffer0_.id as id1_6_, joboffer0_.description as descript2_6_, joboffer0_.end_date as end_date6_6_, joboffer0_.experiencia as experien3_6_, joboffer0_.location as location4_6_, joboffer0_.owner_id as owner_id8_6_, joboffer0_.start_date as start_da7_6_, joboffer0_.title as title5_6_ from job_offer joboffer0_
+[DEBUG] com.jobvacancy.web.rest.JobOfferResource - REST request to save JobOffer : JobOffer{id=null, title='SAMPLE_TEXT', location='SAMPLE_TEXT', description='SAMPLE_TEXT', experiencia='null', startDate='Mon Nov 13 00:00:00 ART 2017', endDate='Mon Nov 13 00:00:00 ART 2017'}
+Hibernate: insert into job_offer (id, description, end_date, experiencia, location, owner_id, start_date, title) values (null, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select joboffer0_.id as id1_6_, joboffer0_.description as descript2_6_, joboffer0_.end_date as end_date6_6_, joboffer0_.experiencia as experien3_6_, joboffer0_.location as location4_6_, joboffer0_.owner_id as owner_id8_6_, joboffer0_.start_date as start_da7_6_, joboffer0_.title as title5_6_ from job_offer joboffer0_
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select joboffer0_.id as id1_6_, joboffer0_.description as descript2_6_, joboffer0_.end_date as end_date6_6_, joboffer0_.experiencia as experien3_6_, joboffer0_.location as location4_6_, joboffer0_.owner_id as owner_id8_6_, joboffer0_.start_date as start_da7_6_, joboffer0_.title as title5_6_ from job_offer joboffer0_
+Hibernate: select joboffer0_.id as id1_6_, joboffer0_.description as descript2_6_, joboffer0_.end_date as end_date6_6_, joboffer0_.experiencia as experien3_6_, joboffer0_.location as location4_6_, joboffer0_.owner_id as owner_id8_6_, joboffer0_.start_date as start_da7_6_, joboffer0_.title as title5_6_ from job_offer joboffer0_
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+[DEBUG] com.jobvacancy.web.rest.JobOfferResource - REST request to save JobOffer : JobOffer{id=null, title='SAMPLE_TEXT', location='SAMPLE_TEXT', description='SAMPLE_TEXT', experiencia='-4', startDate='Mon Nov 13 00:00:00 ART 2017', endDate='Mon Nov 13 00:00:00 ART 2017'}
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: insert into job_offer (id, description, end_date, experiencia, location, owner_id, start_date, title) values (null, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select joboffer0_.id as id1_6_, joboffer0_.description as descript2_6_, joboffer0_.end_date as end_date6_6_, joboffer0_.experiencia as experien3_6_, joboffer0_.location as location4_6_, joboffer0_.owner_id as owner_id8_6_, joboffer0_.start_date as start_da7_6_, joboffer0_.title as title5_6_ from job_offer joboffer0_
+[DEBUG] com.jobvacancy.web.rest.JobOfferResource - REST request to update JobOffer : JobOffer{id=4, title='UPDATED_TEXT', location='UPDATED_TEXT', description='UPDATED_TEXT', experiencia='3', startDate='Mon Nov 13 00:00:00 ART 2017', endDate='Mon Nov 13 00:00:00 ART 2017'}
+Hibernate: update job_offer set description=?, end_date=?, experiencia=?, location=?, owner_id=?, start_date=?, title=? where id=?
+Hibernate: select joboffer0_.id as id1_6_, joboffer0_.description as descript2_6_, joboffer0_.end_date as end_date6_6_, joboffer0_.experiencia as experien3_6_, joboffer0_.location as location4_6_, joboffer0_.owner_id as owner_id8_6_, joboffer0_.start_date as start_da7_6_, joboffer0_.title as title5_6_ from job_offer joboffer0_
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select joboffer0_.id as id1_6_, joboffer0_.description as descript2_6_, joboffer0_.end_date as end_date6_6_, joboffer0_.experiencia as experien3_6_, joboffer0_.location as location4_6_, joboffer0_.owner_id as owner_id8_6_, joboffer0_.start_date as start_da7_6_, joboffer0_.title as title5_6_ from job_offer joboffer0_
+[DEBUG] com.jobvacancy.web.rest.JobOfferResource - REST request to save JobOffer : JobOffer{id=null, title='SAMPLE_TEXT', location='SAMPLE_TEXT', description='SAMPLE_TEXT', experiencia='null', startDate='Mon Nov 13 00:00:00 ART 2017', endDate='Mon Nov 13 00:00:00 ART 2017'}
+Hibernate: insert into job_offer (id, description, end_date, experiencia, location, owner_id, start_date, title) values (null, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select joboffer0_.id as id1_6_, joboffer0_.description as descript2_6_, joboffer0_.end_date as end_date6_6_, joboffer0_.experiencia as experien3_6_, joboffer0_.location as location4_6_, joboffer0_.owner_id as owner_id8_6_, joboffer0_.start_date as start_da7_6_, joboffer0_.title as title5_6_ from job_offer joboffer0_
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: insert into job_offer (id, description, end_date, experiencia, location, owner_id, start_date, title) values (null, ?, ?, ?, ?, ?, ?, ?)
+[DEBUG] com.jobvacancy.web.rest.JobOfferResource - REST request to get JobOffer : 6
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+[DEBUG] com.jobvacancy.web.rest.JobOfferResource - REST request to get JobOffer : 9223372036854775807
+Hibernate: select joboffer0_.id as id1_6_0_, joboffer0_.description as descript2_6_0_, joboffer0_.end_date as end_date6_6_0_, joboffer0_.experiencia as experien3_6_0_, joboffer0_.location as location4_6_0_, joboffer0_.owner_id as owner_id8_6_0_, joboffer0_.start_date as start_da7_6_0_, joboffer0_.title as title5_6_0_, user1_.id as id1_4_1_, user1_.created_by as created_2_4_1_, user1_.created_date as created_3_4_1_, user1_.last_modified_by as last_mod4_4_1_, user1_.last_modified_date as last_mod5_4_1_, user1_.activated as activate6_4_1_, user1_.activation_key as activati7_4_1_, user1_.email as email8_4_1_, user1_.first_name as first_na9_4_1_, user1_.lang_key as lang_ke10_4_1_, user1_.last_name as last_na11_4_1_, user1_.login as login12_4_1_, user1_.password as passwor13_4_1_, user1_.reset_date as reset_d14_4_1_, user1_.reset_key as reset_k15_4_1_ from job_offer joboffer0_ left outer join jhi_user user1_ on joboffer0_.owner_id=user1_.id where joboffer0_.id=?
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: insert into job_offer (id, description, end_date, experiencia, location, owner_id, start_date, title) values (null, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select joboffer0_.id as id1_6_, joboffer0_.description as descript2_6_, joboffer0_.end_date as end_date6_6_, joboffer0_.experiencia as experien3_6_, joboffer0_.location as location4_6_, joboffer0_.owner_id as owner_id8_6_, joboffer0_.start_date as start_da7_6_, joboffer0_.title as title5_6_ from job_offer joboffer0_
+[DEBUG] com.jobvacancy.web.rest.JobOfferResource - REST request to delete JobOffer : 7
+Hibernate: delete from job_offer where id=?
+Hibernate: select joboffer0_.id as id1_6_, joboffer0_.description as descript2_6_, joboffer0_.end_date as end_date6_6_, joboffer0_.experiencia as experien3_6_, joboffer0_.location as location4_6_, joboffer0_.owner_id as owner_id8_6_, joboffer0_.start_date as start_da7_6_, joboffer0_.title as title5_6_ from job_offer joboffer0_
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.336 sec - in com.jobvacancy.web.rest.JobOfferResourceTest
+Running com.jobvacancy.web.rest.SearchTest
+Hibernate: select joboffer0_.id as id1_6_, joboffer0_.description as descript2_6_, joboffer0_.end_date as end_date6_6_, joboffer0_.experiencia as experien3_6_, joboffer0_.location as location4_6_, joboffer0_.owner_id as owner_id8_6_, joboffer0_.start_date as start_da7_6_, joboffer0_.title as title5_6_ from job_offer joboffer0_
+Hibernate: insert into job_offer (id, description, end_date, experiencia, location, owner_id, start_date, title) values (null, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: insert into job_offer (id, description, end_date, experiencia, location, owner_id, start_date, title) values (null, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: select joboffer0_.id as id1_6_, joboffer0_.description as descript2_6_, joboffer0_.end_date as end_date6_6_, joboffer0_.experiencia as experien3_6_, joboffer0_.location as location4_6_, joboffer0_.owner_id as owner_id8_6_, joboffer0_.start_date as start_da7_6_, joboffer0_.title as title5_6_ from job_offer joboffer0_
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec - in com.jobvacancy.web.rest.SearchTest
+Running com.jobvacancy.web.rest.UserResourceTest
+[DEBUG] com.jobvacancy.web.rest.UserResource - REST request to get User : unknown
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+[DEBUG] com.jobvacancy.web.rest.UserResource - REST request to get User : admin
+Hibernate: select user0_.id as id1_4_, user0_.created_by as created_2_4_, user0_.created_date as created_3_4_, user0_.last_modified_by as last_mod4_4_, user0_.last_modified_date as last_mod5_4_, user0_.activated as activate6_4_, user0_.activation_key as activati7_4_, user0_.email as email8_4_, user0_.first_name as first_na9_4_, user0_.lang_key as lang_ke10_4_, user0_.last_name as last_na11_4_, user0_.login as login12_4_, user0_.password as passwor13_4_, user0_.reset_date as reset_d14_4_, user0_.reset_key as reset_k15_4_ from jhi_user user0_ where user0_.login=?
+Hibernate: select authoritie0_.user_id as user_id1_4_0_, authoritie0_.authority_name as authorit2_5_0_, authority1_.name as name1_0_1_ from jhi_user_authority authoritie0_ inner join jhi_authority authority1_ on authoritie0_.authority_name=authority1_.name where authoritie0_.user_id=?
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.07 sec - in com.jobvacancy.web.rest.UserResourceTest
+Running com.jobvacancy.web.rest.utils.ValidatorJobAplicationDataTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec - in com.jobvacancy.web.rest.utils.ValidatorJobAplicationDataTest
+
+Results :
+
+Failed tests: 
+  Status expected:<202> but was:<400>
+  Status expected:<202> but was:<400>
+  Status expected:<400> but was:<202>
+  Status expected:<400> but was:<202>
+  Status expected:<400> but was:<202>
+  Status expected:<400> but was:<202>
+  ApplicationResourceTest.createJobApplicationWhichLinkValid:100 Status expected:<202> but was:<400>
+  ApplicationResourceTest.createJobApplicationWhichLinkInvalid:115 Status expected:<400> but was:<202>
+
+Tests run: 87, Failures: 8, Errors: 0, Skipped: 2
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 53.707s
+[INFO] Finished at: Mon Nov 13 18:46:29 ART 2017
+[INFO] Final Memory: 34M/278M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.17:test (default-test) on project jobvacancy: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/lago/prueba/nuevo/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
