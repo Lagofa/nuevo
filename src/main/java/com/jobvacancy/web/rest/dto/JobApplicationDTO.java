@@ -34,11 +34,11 @@ public class JobApplicationDTO {
 
     private String email;
     
-    public String getlink_CV() {
+    public String getLink_CV() {
         return link_CV;
     }
 
-    public void setlink_CV(String link_CV) {
+    public void setLink_CV(String link_CV) {
         this.link_CV = link_CV;
     }
 

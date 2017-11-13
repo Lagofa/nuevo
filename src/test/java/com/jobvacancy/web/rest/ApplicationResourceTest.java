@@ -47,6 +47,8 @@ public class ApplicationResourceTest {
 
     private static final String APPLICANT_FULLNAME = "THE APPLICANT";
     private static final String APPLICANT_EMAIL = "APPLICANT@TEST.COM";
+    private static final String APPLICANT_VALID_LINK = "https://www.linkedin.com/profile/view?id=AAMAABhp-akBJJDtLnfvsXb-3Ur2820svaUvhaU&trk=hp-identity-name";
+    private static final String APPLICANT_INVALID_LINK = "htts://www.linkedin.com/profile/view?id=AAMAABhp-akBJJDtLnfvsXb-3Ur2820svaUvhaU&trk=hp-identity-name";
     private MockMvc restMockMvc;
 
     private static final long OFFER_ID = 1;
@@ -85,23 +87,32 @@ public class ApplicationResourceTest {
 
     @Test
     @Transactional
-    public void createJobApplication() throws Exception {
+    public void createJobApplicationWhichLinkValid() throws Exception {
         JobApplicationDTO dto = new JobApplicationDTO();
         dto.setEmail(APPLICANT_EMAIL);
         dto.setFullname(APPLICANT_FULLNAME);
         dto.setOfferId(OFFER_ID);
-
-        //when(mailService.sendEmail(to, subject,content,false, false)).thenReturn(Mockito.v);
-        doNothing().when(mailService).sendApplication(APPLICANT_EMAIL, offer);
-
+        dto.setLink_CV(APPLICANT_VALID_LINK);
+        when(mailService.sendApplication(APPLICANT_EMAIL, offer, APPLICANT_VALID_LINK)).thenReturn(Boolean.TRUE);
         restMockMvc.perform(post("/api/Application")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(dto)))
                 .andExpect(status().isAccepted());
-
-        Mockito.verify(mailService).sendApplication(APPLICANT_EMAIL, offer);
-        //StrictAssertions.assertThat(testJobOffer.getLocation()).isEqualTo(DEFAULT_LOCATION);
-        //StrictAssertions.assertThat(testJobOffer.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
     }
-
+    
+    @Test
+    @Transactional
+    public void createJobApplicationWhichLinkInvalid() throws Exception {
+        JobApplicationDTO dto = new JobApplicationDTO();
+        dto.setEmail(APPLICANT_EMAIL);
+        dto.setFullname(APPLICANT_FULLNAME);
+        dto.setOfferId(OFFER_ID);
+        dto.setLink_CV(APPLICANT_INVALID_LINK);
+        when(mailService.sendApplication(APPLICANT_EMAIL, offer, APPLICANT_INVALID_LINK)).thenReturn(Boolean.FALSE);
+        restMockMvc.perform(post("/api/Application")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(dto)))
+                .andExpect(status().isAccepted());
+        Mockito.verify(mailService).sendApplication(APPLICANT_EMAIL, offer,APPLICANT_VALID_LINK);
+    }
 }

@@ -80,7 +80,7 @@ public class BuscarStepDefs {
         //jobOffer = new JobOffer();
     }
 
-	@Given("^​existe una oferta de \"([^\"]*)\" And existe una oferta \"([^\"]*)\"​$")
+	@Given("^​existe una oferta de \"([^\"]*)\" and existe una oferta \"([^\"]*)\"​$")
 	public void existe_una_oferta_de_And_existe_una_oferta_​(String arg1, String arg2) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 	}
@@ -90,13 +90,22 @@ public class BuscarStepDefs {
 	    // Write code here that turns the phrase above into concrete actions
 	}
 
-	@Then("^​encuentro la busqueda \"([^\"]*)\" And​ ​no encu​entro la busqueda \"([^\"]*)\"$")
+	@Then("^​encuentro la busqueda \"([^\"]*)\" and​ ​no encu​entro la busqueda \"([^\"]*)\"$")
 	public void encuentro_la_busqueda_And​_​no_encu​entro_la_busqueda(String arg1, String arg2) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 	}
 
-	@Then("^​encuentro la busqueda \"([^\"]*)\" And​ ​ encu​entro la busqueda \"([^\"]*)\"$")
+	@Then("^​encuentro la busqueda \"([^\"]*)\" and​ ​ encu​entro la busqueda \"([^\"]*)\"$")
 	public void encuentro_la_busqueda_And​_​_encu​entro_la_busqueda(String arg1, String arg2) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	}
+	@Then("^​encuentro la busqueda \"([^\"]*)\" and​ ​encu​entro la busqueda \"([^\"]*)\"$")
+	public void encuentro_la_busqueda_and​_​encu​entro_la_busqueda(String arg1, String arg2) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	}
+
+	@Then("^​encuentro la busqueda \"([^\"]*)\" and​ ​ no encu​entro la busqueda \"([^\"]*)\"$")
+	public void encuentro_la_busqueda_and​_​_no_encu​entro_la_busqueda(String arg1, String arg2) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 	}
 

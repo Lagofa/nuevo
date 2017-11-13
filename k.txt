@@ -1,0 +1,84 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building jobvacancy 0.0.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:1.2.6.RELEASE:run (default-cli) @ jobvacancy >>>
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-versions) @ jobvacancy ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.4.201502262128:prepare-agent (pre-unit-tests) @ jobvacancy ---
+[INFO] surefireArgLine set to -javaagent:/home/lago/.m2/repository/org/jacoco/org.jacoco.agent/0.7.4.201502262128/org.jacoco.agent-0.7.4.201502262128-runtime.jar=destfile=/home/lago/prueba/nuevo/target/test-results/coverage/jacoco/jacoco.exec
+[INFO] 
+[INFO] --- maven-processor-plugin:2.2.4:process (process) @ jobvacancy ---
+[WARNING] diagnostic: warning: The following options were not recognized by any processor: '[mapstruct.defaultComponentModel, mapstruct.suppressGeneratorTimestamp]'
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ jobvacancy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 5 resources
+[INFO] Copying 13 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ jobvacancy ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ jobvacancy ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ jobvacancy ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< spring-boot-maven-plugin:1.2.6.RELEASE:run (default-cli) @ jobvacancy <<<
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.2.6.RELEASE:run (default-cli) @ jobvacancy ---
+[INFO] Attaching agents: []
+Listening for transport dt_socket at address: 5005
+Exception in thread "main" while scanning a simple key
+ in 'reader', line 19, column 5:
+        username:falago@gmail.com
+        ^
+could not found expected ':'
+ in 'reader', line 20, column 5:
+        password:perestroica
+        ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.stalePossibleSimpleKeys(ScannerImpl.java:465)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.needMoreTokens(ScannerImpl.java:280)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:225)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:558)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:143)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:226)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:231)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:155)
+	at org.yaml.snakeyaml.composer.Composer.composeDocument(Composer.java:122)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:84)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:104)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:502)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:161)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:139)
+	at org.springframework.boot.env.YamlPropertySourceLoader$Processor.process(YamlPropertySourceLoader.java:100)
+	at org.springframework.boot.env.YamlPropertySourceLoader.load(YamlPropertySourceLoader.java:57)
+	at org.springframework.boot.env.PropertySourcesLoader.load(PropertySourcesLoader.java:126)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.loadIntoGroup(ConfigFileApplicationListener.java:382)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.load(ConfigFileApplicationListener.java:370)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.load(ConfigFileApplicationListener.java:340)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.addPropertySources(ConfigFileApplicationListener.java:175)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.onApplicationEnvironmentPreparedEvent(ConfigFileApplicationListener.java:145)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.onApplicationEnvironmentPreparedEvent(ConfigFileApplicationListener.java:138)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.onApplicationEvent(ConfigFileApplicationListener.java:127)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:151)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:128)
+	at org.springframework.boot.context.event.EventPublishingRunListener.publishEvent(EventPublishingRunListener.java:100)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:59)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:286)
+	at com.jobvacancy.Application.main(Application.java:71)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 7.404s
+[INFO] Finished at: Sun Nov 12 19:39:14 ART 2017
+[INFO] Final Memory: 39M/331M
+[INFO] ------------------------------------------------------------------------

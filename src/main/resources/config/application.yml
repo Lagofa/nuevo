@@ -15,9 +15,9 @@ async:
 
 mail:
     host: localhost
-    port: 25
-    username:
-    password:
+    port: 2525
+    username: 
+    password: 
     protocol: smtp
     tls: false
     auth: false

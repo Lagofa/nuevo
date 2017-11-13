@@ -3,7 +3,7 @@ package com.jobvacancy.web.rest.utils;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.jobvacancy.domain.util.ValidatorJobApplicationData;
+import com.jobvacancy.web.rest.dto.util.ValidatorJobApplicationData;
 
 public class ValidatorJobAplicationDataTest {
 

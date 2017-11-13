@@ -2,11 +2,15 @@ package com.jobvacancy.service;
 
 import com.jobvacancy.domain.JobOffer;
 import com.jobvacancy.domain.User;
+import com.jobvacancy.web.rest.dto.util.ValidatorJobApplicationData;
+import com.jobvacancy.web.rest.util.HeaderUtil;
+
 import org.apache.commons.lang.CharEncoding;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.MessageSource;
 import org.springframework.core.env.Environment;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
@@ -43,6 +47,8 @@ public class MailService {
     @Inject
     private SpringTemplateEngine templateEngine;
 
+	private ValidatorJobApplicationData validator = new ValidatorJobApplicationData();
+
     /**
      * System default email address that sends the e-mails.
      */
@@ -54,14 +60,17 @@ public class MailService {
     }
 
     @Async
-    public void sendApplication(String applicantEmail, JobOffer offer) {
-        this.sendEmail(offer.getOwner().getEmail(),
-            "[JobVacancy] New candidate",
-            "Hi," + applicantEmail + "applied for your offer:" + offer.getTitle(),
-            false,
-            false);
+        	public Boolean sendApplication(String applicantEmail, JobOffer offer, String link) {
+    	Boolean linkValido=this.validator.validate(link);
+         if(linkValido){   
+    	this.sendEmail(offer.getOwner().getEmail(),
+                "[JobVacancy] New candidate",
+                "Hi, " + applicantEmail + "\n" + "Applied for your offer: " + offer.getTitle() + "\n" + "Link to CV: " + link,
+                false,
+                false);
+    	}
+         return linkValido; 
     }
-
     @Async
     public void sendEmail(String to, String subject, String content, boolean isMultipart, boolean isHtml) {
         log.debug("Send e-mail[multipart '{}' and html '{}'] to '{}' with subject '{}' and content={}",
