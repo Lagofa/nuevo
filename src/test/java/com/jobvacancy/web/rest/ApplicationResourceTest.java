@@ -112,7 +112,6 @@ public class ApplicationResourceTest {
         restMockMvc.perform(post("/api/Application")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(dto)))
-                .andExpect(status().isAccepted());
-        Mockito.verify(mailService).sendApplication(APPLICANT_EMAIL, offer,APPLICANT_VALID_LINK);
+                .andExpect(status().isBadRequest());
     }
 }
