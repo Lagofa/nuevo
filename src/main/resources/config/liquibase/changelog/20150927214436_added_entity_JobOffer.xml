@@ -29,6 +29,8 @@
             <column name="description" type="varchar(255)"/>
             <column name="owner_id" type="bigint"/>
             <column name="experiencia" type="bigint"/>
+            <column name="start_date" type="date"/>
+            <column name="end_date" type="date"/>
 
         </createTable>
         

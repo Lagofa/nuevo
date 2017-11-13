@@ -1,0 +1,61 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building jobvacancy 0.0.4-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-enforcer-plugin:1.3.1:enforce (enforce-versions) @ jobvacancy ---
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.4.201502262128:prepare-agent (pre-unit-tests) @ jobvacancy ---
+[INFO] surefireArgLine set to -javaagent:/home/lago/.m2/repository/org/jacoco/org.jacoco.agent/0.7.4.201502262128/org.jacoco.agent-0.7.4.201502262128-runtime.jar=destfile=/home/lago/prueba/nuevo/target/test-results/coverage/jacoco/jacoco.exec
+[INFO] 
+[INFO] --- maven-processor-plugin:2.2.4:process (process) @ jobvacancy ---
+[ERROR] diagnostic: /home/lago/prueba/nuevo/src/main/java/com/jobvacancy/domain/JobOffer.java:7: error: package cucumber.api.java.it does not exist
+import cucumber.api.java.it.Date;
+                           ^
+[ERROR] diagnostic: /home/lago/prueba/nuevo/src/main/java/com/jobvacancy/domain/JobOffer.java:40: error: cannot find symbol
+    private Date startDate;
+            ^
+  symbol:   class Date
+  location: class com.jobvacancy.domain.JobOffer
+[ERROR] diagnostic: /home/lago/prueba/nuevo/src/main/java/com/jobvacancy/domain/JobOffer.java:44: error: cannot find symbol
+    private Date endDate;
+            ^
+  symbol:   class Date
+  location: class com.jobvacancy.domain.JobOffer
+[ERROR] diagnostic: /home/lago/prueba/nuevo/src/main/java/com/jobvacancy/domain/JobOffer.java:100: error: cannot find symbol
+    public Date getStartDate() {
+           ^
+  symbol:   class Date
+  location: class com.jobvacancy.domain.JobOffer
+[ERROR] diagnostic: /home/lago/prueba/nuevo/src/main/java/com/jobvacancy/domain/JobOffer.java:104: error: cannot find symbol
+    public void setStartDate(Date startDate) {
+                             ^
+  symbol:   class Date
+  location: class com.jobvacancy.domain.JobOffer
+[ERROR] diagnostic: /home/lago/prueba/nuevo/src/main/java/com/jobvacancy/domain/JobOffer.java:108: error: cannot find symbol
+    public Date getEndDate() {
+           ^
+  symbol:   class Date
+  location: class com.jobvacancy.domain.JobOffer
+[ERROR] diagnostic: /home/lago/prueba/nuevo/src/main/java/com/jobvacancy/domain/JobOffer.java:112: error: cannot find symbol
+    public void setEndDate(Date endDate) {
+                           ^
+  symbol:   class Date
+  location: class com.jobvacancy.domain.JobOffer
+[WARNING] diagnostic: warning: The following options were not recognized by any processor: '[mapstruct.defaultComponentModel, mapstruct.suppressGeneratorTimestamp]'
+[ERROR] error on execute: error during compilation
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 5.181s
+[INFO] Finished at: Mon Nov 13 11:19:14 ART 2017
+[INFO] Final Memory: 30M/267M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.bsc.maven:maven-processor-plugin:2.2.4:process (process) on project jobvacancy: Error executing: error during compilation -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

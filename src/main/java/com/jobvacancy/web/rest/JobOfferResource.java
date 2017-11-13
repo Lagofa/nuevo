@@ -236,7 +236,7 @@ public class JobOfferResource {
     @Timed
     public ResponseEntity<List<JobOffer>> getSearchOffers(String word, boolean isSearch)
             throws URISyntaxException {
-    	List<JobOffer> allJobs =  jobOfferRepository.findAll();;
+    	List<JobOffer> allJobs =  jobOfferRepository.findOffers();
     	Page<JobOffer> page =createJobOfferPage(allJobs);
 		if (isSearch && word!=null){
     		page = createJobOfferPage(new Search().search(allJobs,word));
