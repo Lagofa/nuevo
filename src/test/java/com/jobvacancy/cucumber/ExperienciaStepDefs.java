@@ -8,6 +8,9 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import javax.inject.Inject;
@@ -87,6 +90,9 @@ public class ExperienciaStepDefs {
 	public void el_oferente_llena_el_campos_tittle_and_llena_el_campo_description() throws Throwable {
 	    jobOffer.setTitle("java");
 	    jobOffer.setDescription("Programador java");
+	    jobOffer.setStartDate(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+        jobOffer.setEndDate(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+	    
 	}
 
 	@When("^ingresa (\\d+) como experiencia requerida and save nueva oferta de trabajo$")

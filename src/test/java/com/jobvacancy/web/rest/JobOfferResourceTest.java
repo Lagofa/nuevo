@@ -4,11 +4,14 @@ import com.jobvacancy.Application;
 import com.jobvacancy.domain.Authority;
 import com.jobvacancy.domain.JobOffer;
 import com.jobvacancy.domain.User;
+import com.jobvacancy.domain.exception.DateException;
 import com.jobvacancy.repository.JobOfferRepository;
 
 import com.jobvacancy.repository.UserRepository;
 import com.jobvacancy.security.AuthoritiesConstants;
 import com.jobvacancy.service.MailService;
+import com.jobvacancy.web.rest.utils.ValidatorJobOffer;
+
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -59,6 +62,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  *
  * @see JobOfferResource
  */
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
@@ -82,7 +86,9 @@ public class JobOfferResourceTest {
 
     @Mock
     private UserRepository mockUserRepository;
-
+    
+    @Mock
+    private ValidatorJobOffer validator;
     @Inject
     private JobOfferRepository jobOfferRepository;
 
@@ -116,15 +122,15 @@ public class JobOfferResourceTest {
 
 
     @Before
-    public void initTest() {
-        jobOffer = new JobOffer();
+    public void initTest() throws DateException {
+    	jobOffer = new JobOffer();
         jobOffer.setTitle(DEFAULT_TITLE);
         jobOffer.setLocation(DEFAULT_LOCATION);
         jobOffer.setDescription(DEFAULT_DESCRIPTION);
         jobOffer.setExperiencia(null);
         jobOffer.setStartDate(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
         jobOffer.setEndDate(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
-    }
+        }
 
     public static class MockSecurityContext implements SecurityContext {
 
@@ -151,9 +157,7 @@ public class JobOfferResourceTest {
     @Transactional
     public void createJobOffer() throws Exception {
         int databaseSizeBeforeCreate = jobOfferRepository.findAll().size();
-
-        // Create the JobOffer
-
+        
         restJobOfferMockMvc.perform(post("/api/jobOffers")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
                 .content(TestUtil.convertObjectToJsonBytes(jobOffer)))
@@ -255,8 +259,6 @@ public class JobOfferResourceTest {
         jobOffer.setDescription(UPDATED_DESCRIPTION);
         jobOffer.setExperiencia(UPDATED_EXPERIENCIA);
 
-
-
         restJobOfferMockMvc.perform(put("/api/jobOffers")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
                 .content(TestUtil.convertObjectToJsonBytes(jobOffer)))
@@ -294,7 +296,7 @@ public class JobOfferResourceTest {
     @Transactional
     public void createJobOfferWhicStartDateAndEndDateInThePresent() throws Exception {
         int databaseSizeBeforeCreate = jobOfferRepository.findAll().size();
-        
+
         restJobOfferMockMvc.perform(post("/api/jobOffers")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
                 .content(TestUtil.convertObjectToJsonBytes(jobOffer)))

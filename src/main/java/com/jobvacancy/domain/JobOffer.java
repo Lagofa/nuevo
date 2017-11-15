@@ -4,9 +4,14 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.Type;
 
+import com.jobvacancy.domain.exception.DateException;
+import com.jobvacancy.domain.util.ValidatorDate;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.Objects;
 
@@ -19,7 +24,8 @@ import java.util.Objects;
 public class JobOffer implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -100,16 +106,19 @@ public class JobOffer implements Serializable {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public void setStartDate(Date startDate) throws DateException {
+    	ValidatorDate validator=  new ValidatorDate();
+    	this.startDate = validator.validateStartDate(startDate);
     }
 
     public Date getEndDate() {
         return endDate;
+    	
     }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
+    
+    public void setEndDate(Date endDate) throws DateException {
+    	ValidatorDate validator=  new ValidatorDate();    
+    	this.endDate= validator.validateEndDate(this.startDate,endDate);
     }
 
     @Override

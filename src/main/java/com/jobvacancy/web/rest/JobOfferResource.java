@@ -9,6 +9,7 @@ import com.jobvacancy.security.SecurityUtils;
 import com.jobvacancy.web.rest.util.HeaderUtil;
 import com.jobvacancy.web.rest.util.PaginationUtil;
 import com.jobvacancy.web.rest.util.Search;
+import com.jobvacancy.web.rest.utils.ValidatorJobOffer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -53,8 +54,13 @@ public class JobOfferResource {
     @Timed
     public ResponseEntity<JobOffer> createJobOffer(@Valid @RequestBody JobOffer jobOffer) throws URISyntaxException {
         log.debug("REST request to save JobOffer : {}", jobOffer);
+        ValidatorJobOffer validator = new ValidatorJobOffer();
         if (jobOffer.getId() != null) {
             return ResponseEntity.badRequest().header("Failure", "A new jobOffer cannot already have an ID").body(null);
+        }
+        jobOffer= validator.validateJobOffer(jobOffer);
+        if(jobOffer.getTitle()==null){
+        	return ResponseEntity.badRequest().header("Failure", "Ingrese fechas startDate o endDate correctas").body(null);		
         }
         String currentLogin = SecurityUtils.getCurrentLogin();
         Optional<User> currentUser = userRepository.findOneByLogin(currentLogin);
@@ -65,6 +71,7 @@ public class JobOfferResource {
         	if(jobOffer.getExperiencia()<new Long(0)){
         		return ResponseEntity.badRequest().header("Failure", "Ingrese un numero mayor o igual a 0").body(null);	
         	}
+        
         	
         JobOffer result = jobOfferRepository.save(jobOffer);
         return ResponseEntity.created(new URI("/api/jobOffers/" + result.getId()))
@@ -81,7 +88,13 @@ public class JobOfferResource {
     @Timed
     public ResponseEntity<JobOffer> updateJobOffer(@Valid @RequestBody JobOffer jobOffer) throws URISyntaxException {
         log.debug("REST request to update JobOffer : {}", jobOffer);
-        if (jobOffer.getId() == null) {
+        ValidatorJobOffer validator = new ValidatorJobOffer();
+    	jobOffer= validator.validateJobOffer(jobOffer);
+    	if(jobOffer.getTitle()==null){
+        	return ResponseEntity.badRequest().header("Failure", "Ingrese fechas startDate o endDate correctas").body(null);		
+        }
+    	if (jobOffer.getId() == null) {
+        	
             return createJobOffer(jobOffer);
         }
         JobOffer result = jobOfferRepository.save(jobOffer);
@@ -89,22 +102,6 @@ public class JobOfferResource {
                 .headers(HeaderUtil.createEntityUpdateAlert("jobOffer", jobOffer.getId().toString()))
                 .body(result);
     }
-
-    /**
-     * GET  /jobOffers -> get all the jobOffers.
-     */
-/*
-    @RequestMapping(value = "/jobOffers",
-            method = RequestMethod.GET,
-            produces = MediaType.APPLICATION_JSON_VALUE)
-    @Timed
-    public ResponseEntity<List<JobOffer>> getAllJobOffers(Pageable pageable)
-        throws URISyntaxException {
-        Page<JobOffer> page = jobOfferRepository.findAll(pageable);
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/jobOffers");
-        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
-    }
-*/
 
      @RequestMapping(value = "/jobOffers",
         method = RequestMethod.GET,
