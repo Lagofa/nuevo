@@ -106,9 +106,8 @@ public class JobOffer implements Serializable {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) throws DateException {
-    	ValidatorDate validator=  new ValidatorDate();
-    	this.startDate = validator.validateStartDate(startDate);
+    public void setStartDate(Date startDate){
+    	this.startDate = startDate;
     }
 
     public Date getEndDate() {

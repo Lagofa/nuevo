@@ -22,7 +22,7 @@ angular.module('jobvacancyApp').controller('JobOfferDialogController',
             if(typeof $scope.jobOffer.endDate == 'undefined'){
                 $scope.jobOffer.endDate = null;
             }
-            if (validateDateIsNotInThePast($scope.jobOffer.startDate) === true && validateDateIsNotInThePast($scope.jobOffer.endDate) === true && validateEndDateIsGreaterThanStartDate($scope.jobOffer.startDate,$scope.jobOffer.endDate) === true){
+            if ( validateDateIsNotInThePast($scope.jobOffer.endDate) === true && validateEndDateIsGreaterThanStartDate($scope.jobOffer.startDate,$scope.jobOffer.endDate) === true){
                 $scope.editForm.startDate.$invalid=false;
                 $scope.editForm.startDate.$valid=true;
                 $scope.editForm.startDate.$error=false;
@@ -37,11 +37,6 @@ angular.module('jobvacancyApp').controller('JobOfferDialogController',
             	}
              }
             else{
-                if(validateDateIsNotInThePast($scope.jobOffer.startDate) === false){
-                    $scope.editForm.startDate.$invalid=true;
-                    $scope.editForm.startDate.$valid=false;
-                    $scope.editForm.startDate.$error=true;
-                }
                 if(validateDateIsNotInThePast($scope.jobOffer.endDate) === false){
                     $scope.editForm.endDate.$invalid=true;
                     $scope.editForm.endDate.$valid=false;

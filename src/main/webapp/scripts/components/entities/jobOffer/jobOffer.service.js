@@ -10,7 +10,7 @@ angular.module('jobvacancyApp')
                     data = angular.fromJson(data);
 		    data.startDate =  DateUtils.convertLocaleDateFromServer(data.startDate);
                     data.endDate =  DateUtils.convertLocaleDateFromServer(data.endDate);
-                    return data;
+                   return data;
                 }
             },
             'update': { method:'PUT' }

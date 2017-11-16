@@ -113,41 +113,42 @@ public void se_creo_la_oferta_con_fecha_de_publicacion_dias_despues_de_hoy_and_f
 	Date startDate=new Date(today.getTime() + TimeUnit.DAYS.toMillis(arg2));
 	Date endDate=new Date(today.getTime() + TimeUnit.DAYS.toMillis(arg3));
 	List<JobOffer> jobOffers = jobOfferRepository.findAll();
+	 assertThat(jobOffers.get(0).getTitle()).isEqualTo(arg1);
 	 assertThat(jobOffers.get(0).getStartDate()).isEqualTo(startDate);
 	 assertThat(jobOffers.get(0).getEndDate()).isEqualTo(endDate);
 	 jobOfferRepository.deleteAll();
 }
 
-@When("^ingreso fecha de publicacion (\\d+) dias antes de hoy$")
-public void ingreso_fecha_de_publicacion_dias_antes_de_hoy(int arg1) throws Throwable {
-	Date startDate=new Date(today.getTime() - TimeUnit.DAYS.toMillis(arg1));
-	try{
-		jobOffer.setStartDate(startDate);
-	}
-	catch(DateException e){
-		exception=e;
-	}
-	
-}
 
-@Then("^no se creo la oferta_con_starDate$")
-public void no_se_creo_la_oferta_con_starDate() throws Throwable {
-	assertThat(exception.getMessage()).isEqualTo("Invalid startDate");
- }
-
-@Then("^no se creo la oferta_con_enDate$")
+@Then("^no se creo la oferta con enDate$")
 public void no_se_creo_la_oferta_con_endDate() throws Throwable {
 	assertThat(exception.getMessage()).isEqualTo("Invalid endDate");
  }
 
-@When("^ingreso fecha de publicacion hoy and fecha vencimiento (\\d+) dias antes de hoy$")
-public void ingreso_fecha_de_publicacion_hoy_and_fecha_vencimiento_dias_antes_de_hoy(int arg1) throws Throwable {
+@When("^ingreso fecha de vencimiento (\\d+) dias antes de hoy y fecha de publicacion hoy$")
+public void ingreso_fecha_de_vencimiento_dias_antes_de_hoy_y_fecha_de_publicacion_hoy(int arg1) throws Throwable {
+	Date startDate=today;
+	Date endDate=new Date(today.getTime() - TimeUnit.DAYS.toMillis(arg1));
+	jobOffer.setStartDate(startDate);
+	try{
+		jobOffer.setEndDate(endDate);
+	}catch(DateException e){
+		 exception=e;
+	}
+}
+
+@Then("^no se creo la oferta con endDate menor a starDate$")
+public void no_se_creo_la_oferta_con_endDate_menor_a_starDate() throws Throwable {
+	assertThat(exception.getMessage()).isEqualTo("Invalid endDate");
+}
+
+@When("^ingreso fecha vencimiento (\\d+) dias antes de hoy$")
+public void ingreso_fecha_vencimiento_dias_antes_de_hoy(int arg1) throws Throwable {
 	Date endDate=new Date(today.getTime() - TimeUnit.DAYS.toMillis(arg1));
 	try{
-		jobOffer.setStartDate(endDate);
-	}
-	catch(DateException e){
-		exception=e;
+		jobOffer.setEndDate(endDate);
+	}catch(DateException e){
+		 exception=e;
 	}
 }
 

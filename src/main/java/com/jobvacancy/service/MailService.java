@@ -61,7 +61,7 @@ public class MailService {
 
     @Async
         	public Boolean sendApplication(String applicantEmail, JobOffer offer, String link) {
-    	Boolean linkValido=this.validator.validate(link);
+    	boolean linkValido=this.validator.validate(link);
          if(linkValido){   
     	this.sendEmail(offer.getOwner().getEmail(),
                 "[JobVacancy] New candidate",
