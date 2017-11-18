@@ -62,6 +62,7 @@ public class JobOfferResource {
         if(jobOffer.getTitle()==null){
         	return ResponseEntity.badRequest().header("Failure", "Ingrese fechas startDate o endDate correctas").body(null);		
         }
+        jobOffer.setPostulations(new Long(0));
         String currentLogin = SecurityUtils.getCurrentLogin();
         Optional<User> currentUser = userRepository.findOneByLogin(currentLogin);
         jobOffer.setOwner(currentUser.get());
@@ -70,9 +71,7 @@ public class JobOfferResource {
         }else
         	if(jobOffer.getExperiencia()<new Long(0)){
         		return ResponseEntity.badRequest().header("Failure", "Ingrese un numero mayor o igual a 0").body(null);	
-        	}
-        
-        	
+        	}    	
         JobOffer result = jobOfferRepository.save(jobOffer);
         return ResponseEntity.created(new URI("/api/jobOffers/" + result.getId()))
                 .headers(HeaderUtil.createEntityCreationAlert("jobOffer", result.getId().toString()))
@@ -94,7 +93,6 @@ public class JobOfferResource {
         	return ResponseEntity.badRequest().header("Failure", "Ingrese fechas startDate o endDate correctas").body(null);		
         }
     	if (jobOffer.getId() == null) {
-        	
             return createJobOffer(jobOffer);
         }
         JobOffer result = jobOfferRepository.save(jobOffer);

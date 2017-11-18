@@ -171,6 +171,7 @@ public class JobOfferResourceTest {
         assertThat(testJobOffer.getLocation()).isEqualTo(DEFAULT_LOCATION);
         assertThat(testJobOffer.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
         assertThat(testJobOffer.getExperiencia()).isEqualTo(DEFAULT_EXPERIENCIA);
+        assertThat(testJobOffer.getPostulations()).isEqualTo(new Long(0));
     }
 
     @Test

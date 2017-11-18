@@ -50,6 +50,9 @@ public class JobOffer implements Serializable {
 
     @Column(name = "experiencia")
     private Long experiencia;
+    
+    @Column(name = "postulations")
+    private Long postulations;
 
     @ManyToOne
     private User owner;
@@ -119,6 +122,14 @@ public class JobOffer implements Serializable {
     	ValidatorDate validator=  new ValidatorDate();    
     	this.endDate= validator.validateEndDate(this.startDate,endDate);
     }
+    
+    public void setPostulations(Long postulations) {
+        this.postulations = postulations;
+    }
+    
+    public Long getPostulations() {
+        return postulations;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -151,6 +162,7 @@ public class JobOffer implements Serializable {
             ", experiencia='" + experiencia + "'" +
             ", startDate='" + startDate + "'" +
             ", endDate='" + endDate + "'" +
+            ", postulations='" + postulations + "'" +
             '}';
     }
 }

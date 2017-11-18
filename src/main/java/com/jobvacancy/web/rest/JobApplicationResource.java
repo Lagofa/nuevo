@@ -34,8 +34,7 @@ public class JobApplicationResource {
     private JobOfferRepository jobOfferRepository;
 
     @Inject
-    private MailService mailService;
-
+    private MailService mailService; 
     /**
      * POST  /Application -> Create a new jobOffer.
      */
@@ -45,12 +44,18 @@ public class JobApplicationResource {
     @Timed
     public ResponseEntity<JobOffer> createJobApplication(@Valid @RequestBody JobApplicationDTO jobApplication) throws URISyntaxException {
         log.debug("REST request to save JobApplication : {}", jobApplication);
-        JobOffer jobOffer = jobOfferRepository.findOne(jobApplication.getOfferId());
-        if(!this.mailService.sendApplication(jobApplication.getEmail(), jobOffer, jobApplication.getLink_CV())){
-      	return ResponseEntity.badRequest().header("Failure", "Ingrese fechas startDate o endDate correctas").body(null);		
- }
-        return ResponseEntity.accepted()
-	            .headers(HeaderUtil.createAlert("Application created and sent offer's owner", "")).body(null);
-     }    
-      
+        return incrementPostulationsAndSendApplication(jobApplication);
+    } 
+    
+    private ResponseEntity<JobOffer> incrementPostulationsAndSendApplication(JobApplicationDTO jobApplication){
+    	JobOffer jobOffer = jobOfferRepository.findOne(jobApplication.getOfferId());
+    	if(!this.mailService.sendApplication(jobApplication.getEmail(), jobOffer, jobApplication.getLink_CV())){
+    		return ResponseEntity.badRequest().header("Failure", "Ingrese fechas startDate o endDate correctas").body(null);		
+    	}
+    	jobOffer.setPostulations(jobOffer.getPostulations() + new Long(1));
+    	jobOfferRepository.save(jobOffer);
+    	return ResponseEntity.accepted()
+            .headers(HeaderUtil.createAlert("Application created and sent offer's owner", "")).body(null);
+    }
+    
 }

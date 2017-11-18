@@ -13,6 +13,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.SpringApplicationContextLoader;
 import org.springframework.http.MediaType;
@@ -76,6 +77,7 @@ public class linKCVStepDefs {
         offer.setTitle(OFFER_TITLE);
         offer.setId(OFFER_ID);
         offer.setOwner(user.get());
+        offer.setPostulations(new Long(0));
         dto = new JobApplicationDTO();
         when(jobOfferRepository.findOne(OFFER_ID)).thenReturn(offer);
         JobApplicationResource jobApplicationResource = new JobApplicationResource();
@@ -100,6 +102,7 @@ public class linKCVStepDefs {
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(dto)));
 	}
+
 
 	@Then("^se envia mail al oferente de la jobOffer$")
 	public void se_envia_mail_al_oferente_de_la_jobOffer() throws Throwable {

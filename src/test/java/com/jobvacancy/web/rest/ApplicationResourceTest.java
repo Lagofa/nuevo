@@ -76,6 +76,7 @@ public class ApplicationResourceTest {
         offer.setTitle(OFFER_TITLE);
         offer.setId(OFFER_ID);
         offer.setOwner(user.get());
+        offer.setPostulations(new Long(0));
         when(jobOfferRepository.findOne(OFFER_ID)).thenReturn(offer);
         JobApplicationResource jobApplicationResource = new JobApplicationResource();
         ReflectionTestUtils.setField(jobApplicationResource, "jobOfferRepository", jobOfferRepository);
@@ -87,7 +88,7 @@ public class ApplicationResourceTest {
 
     @Test
     @Transactional
-    public void createJobApplicationWhichLinkValid() throws Exception {
+    public void testCreateJobApplicationWhichLinkValid() throws Exception {
         JobApplicationDTO dto = new JobApplicationDTO();
         dto.setEmail(APPLICANT_EMAIL);
         dto.setFullname(APPLICANT_FULLNAME);
@@ -102,7 +103,7 @@ public class ApplicationResourceTest {
     
     @Test
     @Transactional
-    public void createJobApplicationWhichLinkInvalid() throws Exception {
+    public void testCreateJobApplicationWhichLinkInvalid() throws Exception {
         JobApplicationDTO dto = new JobApplicationDTO();
         dto.setEmail(APPLICANT_EMAIL);
         dto.setFullname(APPLICANT_FULLNAME);
@@ -113,5 +114,21 @@ public class ApplicationResourceTest {
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(dto)))
                 .andExpect(status().isBadRequest());
+    }
+    
+    @Test
+    @Transactional
+    public void  testIncrementPostulations() throws Exception {
+        JobApplicationDTO dto = new JobApplicationDTO();
+        dto.setEmail(APPLICANT_EMAIL);
+        dto.setFullname(APPLICANT_FULLNAME);
+        dto.setOfferId(OFFER_ID);
+        dto.setLink_CV(APPLICANT_VALID_LINK);
+        when(mailService.sendApplication(APPLICANT_EMAIL, offer, APPLICANT_VALID_LINK)).thenReturn(Boolean.TRUE);
+        restMockMvc.perform(post("/api/Application")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(dto)))
+                .andExpect(status().isAccepted());
+        assertThat(jobOfferRepository.findOne(OFFER_ID).getPostulations()==1);
     }
 }

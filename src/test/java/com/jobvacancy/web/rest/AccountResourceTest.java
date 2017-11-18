@@ -314,4 +314,5 @@ public class AccountResourceTest {
         assertThat(userDup.get().getAuthorities()).hasSize(1)
             .containsExactly(authorityRepository.findOne(AuthoritiesConstants.USER));
     }
+    
 }
