@@ -9,7 +9,7 @@ public class ValidatorJobApplicationData {
 	 
 	    public boolean validate(String string) {
 	    	Pattern pattern=null;
-	        	pattern = Pattern.compile(this.patternLink);
+	        pattern = Pattern.compile(this.patternLink);
 	        Matcher matcher = pattern.matcher(string);
 	        return matcher.matches();
 	    }
