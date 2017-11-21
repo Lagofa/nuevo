@@ -4,17 +4,41 @@ angular.module('jobvacancyApp')
     .controller('JobOfferController', function ($scope, JobOffer, ParseLinks) {
         $scope.jobOffers = [];
         $scope.page = 0;
-        $scope.loadAll = function() {
-            JobOffer.query({page: $scope.page, size: 20}, function(result, headers) {
+	document.getElementById("searchActive").disabled=true;
+	document.getElementById("searchExpired").disabled=false;
+	$scope.searchExpired = function() { 
+    			$scope.viewExpired();
+		};
+	$scope.searchActive = function() { 
+    			$scope.viewActive();
+		};
+        $scope.loadActive = function() {
+            JobOffer.query({page: $scope.page, size: 20, view: true}, function(result, headers) {
                 $scope.links = ParseLinks.parse(headers('link'));
+		document.getElementById("searchActive").disabled=true;
+		document.getElementById("searchExpired").disabled=false;		
                 $scope.jobOffers = result;
             });
         };
-        $scope.loadPage = function(page) {
-            $scope.page = page;
-            $scope.loadAll();
+	$scope.loadExpired = function() {
+            JobOffer.query({page: $scope.page, size: 20, view:false}, function(result, headers) {
+                $scope.links = ParseLinks.parse(headers('link'));
+		document.getElementById("searchActive").disabled=false;
+		document.getElementById("searchExpired").disabled=true;	
+		$scope.clear();               
+		$scope.jobOffers = result;
+	
+            });
         };
-        $scope.loadAll();
+	$scope.viewActive = function(page) {
+            $scope.page = page;
+            $scope.loadActive();
+        };
+        $scope.viewExpired = function(page) {
+            $scope.page = page;
+            $scope.loadExpired();
+        };
+        $scope.loadActive();
 
         $scope.delete = function (id) {
             JobOffer.get({id: id}, function(result) {
@@ -26,7 +50,7 @@ angular.module('jobvacancyApp')
         $scope.confirmDelete = function (id) {
             JobOffer.delete({id: id},
                 function () {
-                    $scope.loadAll();
+                    $scope.loadActive();
                     $('#deleteJobOfferConfirmation').modal('hide');
                     $scope.clear();
                 });

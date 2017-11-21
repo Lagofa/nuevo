@@ -10,8 +10,19 @@
             </div>
         </div>
     </div>
-
-    <div class="modal fade" id="deleteJobOfferConfirmation">
+<div class="container">
+        <div class="row">
+           <div class="col-md-4 col-md-offset-8">
+		<button class="btn btn-primary" id="searchActive" ng-click="searchActive()">
+                    <span class="glyphicon glyphicon-view"></span> <span>View JobOffers Actived</span>
+                </button>
+		<button class="btn btn-primary" id="searchExpired" ng-click="searchExpired()">
+                    <span class="glyphicon glyphicon-view"></span> <span>View JobOffers Expired</span>
+                </button>
+      	   </div>
+        </div>
+</div>
+<div class="modal fade" id="deleteJobOfferConfirmation">
         <div class="modal-dialog">
             <div class="modal-content">
                 <form name="deleteForm" ng-submit="confirmDelete(jobOffer.id)">
